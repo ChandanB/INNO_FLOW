@@ -33,9 +33,10 @@ assert_contains "$page" "cdn.prod.website-files.com/65dfe94f6194922108671f44/65d
 assert_contains "$css" "sytycc-shell"
 assert_contains "$css" "\\.sytycc-team-section \\.feature-wrap\\.reverse"
 assert_contains "$css" "\\.sytycc-team-section \\.feature-content-2"
-assert_contains "$css" "text-align: justify;"
-assert_contains "$css" "\\.sytycc-shell \\.sytycc-team-section\\.section\\.about-us"
-assert_contains "$css" "background-color: #060606 !important;"
+assert_contains "$css" "\\.sytycc-team-section \\.paragraph-2, \\.sytycc-team-section \\.paragraph-3, \\.sytycc-team-section \\.paragraph-4"
+assert_contains "$css" "text-align: left;"
+assert_contains "$css" "grid-template-columns: repeat\\(2, minmax\\(0, 1fr\\)\\);"
+assert_contains "$css" "display: grid;"
 assert_contains "../.github/workflows/jekyll-gh-pages.yml" "path: ./docs"
 
 assert_not_contains "$page" "Lorem ipsum"
