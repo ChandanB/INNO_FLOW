@@ -7159,3 +7159,55 @@ figcaption {
     min-height: 0;
   }
 }
+
+/* Webflow embed-safe overrides for legacy Meet the Crew markup */
+.sytycc-shell {
+  color: #f5f1eb;
+  background-color: #050505;
+}
+
+.sytycc-shell .sytycc-team-section.section.about-us {
+  background-color: #060606 !important;
+  background-image: linear-gradient(180deg, #0a0a0a, #050505) !important;
+  border-top: 1px solid #ffffff0d !important;
+  border-bottom: 1px solid #ffffff0d !important;
+}
+
+.sytycc-shell .sytycc-team-section .feature-wrap.personal-details {
+  background-color: #ffffff06 !important;
+  border: 1px solid #ffffff12 !important;
+  border-radius: 32px !important;
+  box-shadow: inset 0 1px #ffffff0d !important;
+}
+
+.sytycc-shell .sytycc-team-section .feature-content-2 {
+  padding-left: 1em !important;
+  padding-right: 2em !important;
+}
+
+.sytycc-shell .sytycc-team-section .feature-image-2 {
+  justify-content: center !important;
+  align-items: center !important;
+  display: flex !important;
+}
+
+.sytycc-shell .sytycc-team-section .image-2 {
+  object-fit: cover !important;
+  border-radius: 26px !important;
+  box-shadow: 0 22px 44px #00000036 !important;
+}
+
+.sytycc-shell .sytycc-team-section .title {
+  color: #f3a15f !important;
+}
+
+.sytycc-shell .sytycc-team-section .white {
+  color: #fff !important;
+}
+
+.sytycc-shell .sytycc-team-section .paragraph-2,
+.sytycc-shell .sytycc-team-section .paragraph-3,
+.sytycc-shell .sytycc-team-section .paragraph-4 {
+  color: #dfd8cf !important;
+  text-align: justify !important;
+}
