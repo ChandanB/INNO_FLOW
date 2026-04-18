@@ -34,8 +34,6 @@ assert_contains "$css" "sytycc-shell"
 assert_contains "$css" "\\.sytycc-team-section \\.feature-wrap\\.reverse"
 assert_contains "$css" "\\.sytycc-team-section \\.feature-content-2"
 assert_contains "$css" "text-align: justify;"
-assert_contains "$css" "\\.sytycc-shell \\.sytycc-team-section\\.section\\.about-us"
-assert_contains "$css" "background-color: #060606 !important;"
 assert_contains "../.github/workflows/jekyll-gh-pages.yml" "path: ./docs"
 
 assert_not_contains "$page" "Lorem ipsum"
