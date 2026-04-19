@@ -6926,12 +6926,17 @@ figcaption {
 .sytycc-team-section .feature-image-2 {
   flex: none;
   width: min(30vw, 320px);
+  max-width: 320px;
+  align-self: flex-start;
 }
 
 .sytycc-team-section .image-2 {
   object-fit: cover;
   border-radius: 26px;
-  min-height: 360px;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: min(32rem, 70vh);
   box-shadow: 0 22px 44px #00000036;
 }
 
@@ -7002,6 +7007,8 @@ figcaption {
   justify-content: center;
   align-items: center;
   width: min(30vw, 320px);
+  max-width: 320px;
+  align-self: flex-start;
   display: flex;
 }
 
@@ -7011,7 +7018,9 @@ figcaption {
   border-radius: 26px;
   width: 100%;
   max-width: none;
-  min-height: 360px;
+  height: auto;
+  min-height: 0;
+  max-height: min(32rem, 70vh);
   box-shadow: 0 22px 44px #00000036;
 }
 
