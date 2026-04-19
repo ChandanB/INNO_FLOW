@@ -7199,19 +7199,21 @@ figcaption {
 
 @media screen and (min-width: 992px) {
   .sytycc-page .container-5 {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    column-gap: 24px;
+    gap: 24px;
   }
 
   .sytycc-page .nav-menu {
+    flex: 0 1 auto;
     align-self: center;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 4px;
-    width: 100%;
+    width: auto;
     display: flex;
+    float: none;
   }
 
   .sytycc-page .nav-menu .w-nav-link {
@@ -7222,13 +7224,18 @@ figcaption {
   }
 
   .sytycc-page .grid-2 {
+    flex: 0 0 auto;
+    justify-content: flex-end;
     align-items: center;
-    justify-self: start;
+    gap: 18px;
+    margin-left: auto;
   }
 
   .sytycc-page .grid-copy {
+    display: flex;
+    gap: 23px;
     align-items: center;
-    justify-self: end;
+    justify-content: flex-end;
   }
 }
 
