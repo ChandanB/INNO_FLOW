@@ -404,7 +404,7 @@ body.camp-inno-page {
 .camp-inno-hero-media {
   position: relative;
   aspect-ratio: 5 / 4;
-  min-height: max(28rem, 60vh);
+  min-height: clamp(32rem, 46vw, 42rem);
   max-height: 60vh;
   border-radius: 2rem;
   overflow: hidden;
@@ -452,7 +452,7 @@ body.camp-inno-page {
   font-weight: 400;
 }
 .camp-inno-hero-copy p {
-  max-width: 28rem;
+  max-width: 32rem;
   font-size: clamp(1.02rem, 2vw, 1.18rem);
   color: rgba(255, 253, 248, 0.84);
 }
