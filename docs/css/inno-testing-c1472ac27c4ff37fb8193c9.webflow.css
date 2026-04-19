@@ -6936,6 +6936,87 @@ figcaption {
   line-height: 1.75;
 }
 
+.sytycc-crew-section {
+  background-color: #060606;
+  background-image: linear-gradient(180deg, #0a0a0a, #050505);
+  border-top: 1px solid #ffffff0d;
+  border-bottom: 1px solid #ffffff0d;
+  width: 100%;
+  padding: 18px 0 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.sytycc-crew-row {
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  background-color: #ffffff06;
+  border: 1px solid #ffffff12;
+  border-radius: 32px;
+  justify-content: space-between;
+  align-items: center;
+  width: min(1200px, 92vw);
+  margin: 0 auto 24px;
+  padding: 36px;
+  display: flex;
+  box-shadow: inset 0 1px #ffffff0d;
+}
+
+.sytycc-crew-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.sytycc-crew-copy {
+  flex: 1;
+  max-width: 680px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sytycc-crew-visual {
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: min(30vw, 320px);
+  display: flex;
+}
+
+.sytycc-crew-portrait {
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 26px;
+  width: 100%;
+  max-width: none;
+  min-height: 360px;
+  box-shadow: 0 22px 44px #00000036;
+}
+
+.sytycc-crew-eyebrow {
+  color: #f3a15f;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.sytycc-crew-name {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-family: Neuekabel, sans-serif;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: .96;
+}
+
+.sytycc-crew-bio {
+  color: #dfd8cf;
+  margin-bottom: 0;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
 .sytycc-closing-band {
   grid-column-gap: 24px;
   grid-row-gap: 24px;
@@ -7049,6 +7130,14 @@ figcaption {
     min-height: 620px;
   }
 
+  .sytycc-crew-row, .sytycc-crew-row-reverse {
+    flex-direction: column-reverse;
+  }
+
+  .sytycc-crew-visual {
+    width: min(100%, 420px);
+  }
+
   .sytycc-team-section .feature-wrap.personal-details, .sytycc-team-section .feature-wrap.reverse.personal-details {
     flex-direction: column-reverse;
     width: min(1200px, 92vw);
@@ -7101,6 +7190,15 @@ figcaption {
 
   .resource-hub-embed {
     min-height: 540px;
+  }
+
+  .sytycc-crew-row, .sytycc-crew-row-reverse {
+    width: 94vw;
+    padding: 24px;
+  }
+
+  .sytycc-crew-portrait {
+    min-height: 0;
   }
 
   .sytycc-team-section .feature-wrap.personal-details, .sytycc-team-section .feature-wrap.reverse.personal-details {
