@@ -41,43 +41,25 @@
   gtag('config', 'G-7LYBBGSEM7');
 </script>
   <style>
-    .sytycc-page .container-5 {
+    .sytycc-page .sytycc-hero-visual {
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
-      gap: 1.25rem;
       min-width: 0;
     }
 
-    .sytycc-page .grid-2 {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex: 0 1 auto;
-      min-width: 0;
-      padding-right: 0 !important;
+    .sytycc-page .sytycc-logo-stage {
+      width: min(100%, 28rem);
+      min-height: auto;
+      max-height: 28rem;
+      aspect-ratio: 1 / 1;
+      padding: clamp(1.25rem, 3vw, 2rem);
     }
 
-    .sytycc-page .grid-copy {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
-      min-width: 0;
-      padding-right: 0 !important;
-    }
-
-    .sytycc-page .nav-menu {
-      position: static;
-      float: none;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex: 1 1 auto;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-      min-width: 0;
-      max-width: 100%;
-      margin-left: auto;
+    .sytycc-page .sytycc-hero-logo {
+      width: min(100%, 18rem);
+      max-height: min(60vh, 18rem);
+      object-fit: contain;
     }
 
     .sytycc-page .feature-wrap.personal-details.sytycc-crew-row {
@@ -102,23 +84,9 @@
     }
 
     @media screen and (max-width: 991px) {
-      .sytycc-page .container-5 {
-        display: block;
-      }
-
-      .sytycc-page .grid-2 {
-        display: block;
-      }
-
-      .sytycc-page .grid-copy {
-        display: none;
-      }
-
-      .sytycc-page .nav-menu {
-        margin-top: 1rem;
-        padding: 1rem;
-        border-radius: 1rem;
-        flex-wrap: nowrap;
+      .sytycc-page .sytycc-logo-stage {
+        width: min(100%, 24rem);
+        max-height: 24rem;
       }
 
       .sytycc-page .feature-image-2.sytycc-crew-visual {
