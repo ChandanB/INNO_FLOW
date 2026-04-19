@@ -429,11 +429,9 @@ body.camp-inno-page {
   position: relative;
   max-width: 31rem;
   margin-left: calc(-1 * clamp(3rem, 9vw, 10rem));
-  justify-self: end;
-  min-height: min(max(30rem, 72vh), 100%);
+  justify-self: start;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   padding: clamp(1.5rem, 3vw, 2.25rem);
   border: 1px solid rgba(255, 253, 248, 0.12);
   border-radius: 1.75rem;
