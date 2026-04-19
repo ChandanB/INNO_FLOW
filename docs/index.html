@@ -238,7 +238,8 @@
 
     .camp-inno-hero-media {
       position: relative;
-      min-height: 32rem;
+      aspect-ratio: 5 / 4;
+      min-height: clamp(32rem, 46vw, 42rem);
       border-radius: 2rem;
       overflow: hidden;
       box-shadow: var(--camp-shadow);
@@ -256,6 +257,7 @@
     .camp-inno-hero-image {
       width: 100%;
       height: 100%;
+      min-height: 100%;
       object-fit: cover;
       object-position: center;
     }
@@ -466,7 +468,7 @@
       display: grid;
       grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
       gap: clamp(1.5rem, 4vw, 3rem);
-      align-items: center;
+      align-items: stretch;
       width: min(calc(100% - 2rem), 1320px);
       margin: 6rem auto;
       padding: clamp(1.5rem, 3vw, 2rem);
@@ -480,6 +482,9 @@
     }
 
     .camp-inno-motion-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       padding: 1.5rem;
     }
 
@@ -492,6 +497,8 @@
 
     .camp-inno-motion-video {
       width: 100%;
+      height: 100%;
+      aspect-ratio: 16 / 10;
       min-height: 25rem;
       border: 1px solid rgba(255, 253, 248, 0.12);
       border-radius: 1.6rem;
