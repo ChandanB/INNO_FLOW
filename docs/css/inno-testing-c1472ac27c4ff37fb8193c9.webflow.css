@@ -1945,7 +1945,7 @@ figcaption {
   padding: 12px 25px;
   font-size: 12px;
   line-height: 20px;
-  transition: all .2s;
+  transition: background-color .2s, color .2s;
 }
 
 .button-primary:hover {
@@ -6725,6 +6725,25 @@ figcaption {
   pointer-events: auto;
 }
 
+.skip-link {
+  color: #fff;
+  background-color: #050505;
+  border: 1px solid #ffffff1f;
+  border-radius: 999px;
+  padding: 12px 16px;
+  text-decoration: none;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  transform: translateY(-160%);
+  transition: transform .2s ease;
+  z-index: 20;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
 .sytycc-subnav-link {
   color: #f3eee7;
   letter-spacing: .12em;
@@ -6870,6 +6889,10 @@ figcaption {
   padding: 52px 0 28px;
 }
 
+#overview, #hub, #team {
+  scroll-margin-top: 140px;
+}
+
 .sytycc-team-section.section.about-us {
   background-color: #060606;
   background-image: linear-gradient(180deg, #0a0a0a, #050505);
@@ -6937,6 +6960,7 @@ figcaption {
 }
 
 .sytycc-crew-section {
+  color-scheme: dark;
   background-color: #060606;
   background-image: linear-gradient(180deg, #0a0a0a, #050505);
   border-top: 1px solid #ffffff0d;

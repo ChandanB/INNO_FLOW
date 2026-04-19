@@ -43,7 +43,7 @@
     }
 
     .camp-inno-home {
-      --camp-header-offset: 8.5rem;
+      --camp-header-offset: 7rem;
       background: var(--camp-sand);
       color: var(--camp-ink);
       font-family: "Gothic A1", sans-serif;
@@ -135,7 +135,7 @@
       position: sticky;
       top: 0;
       z-index: 40;
-      padding: 1rem 0 0;
+      padding: 0.7rem 0 0;
       background:
         linear-gradient(180deg, rgba(8, 26, 51, 0.76), rgba(8, 26, 51, 0));
     }
@@ -143,7 +143,7 @@
     .camp-inno-home .camp-inno-site-header .navbar {
       width: min(calc(100% - 2rem), var(--camp-max));
       margin: 0 auto;
-      padding: 0.9rem 1.25rem;
+      padding: 0.8rem 1.1rem;
       border: 1px solid rgba(255, 253, 248, 0.12);
       border-radius: 1.5rem;
       background: rgba(8, 26, 51, 0.8);
@@ -152,18 +152,39 @@
     }
 
     .camp-inno-home .camp-inno-site-header .container-5 {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
       width: 100%;
       max-width: none;
       padding: 0;
     }
 
     .camp-inno-home .camp-inno-site-header .grid-2 {
+      display: flex;
       align-items: center;
+      gap: 1rem;
+      flex: 0 1 auto;
     }
 
     .camp-inno-home .camp-inno-site-header .grid-copy {
-      justify-self: end;
+      display: flex;
+      align-items: center;
       gap: 0.75rem;
+    }
+
+    .camp-inno-home .camp-inno-site-header .nav-menu {
+      position: static;
+      right: auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 1 1 auto;
+      gap: 1.25rem;
+      margin-left: auto;
+      padding: 0;
+      background: transparent !important;
+      border: 0;
     }
 
     .camp-inno-home .camp-inno-site-header .sm-icon-link,
@@ -191,14 +212,16 @@
 
     .camp-inno-home .camp-inno-site-header .nav-link-8 {
       padding: 0;
-      font-size: 0.95rem;
+      font-size: 0.82rem;
       font-weight: 600;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
       background: transparent;
     }
 
     .camp-inno-home .camp-inno-site-header .camp-inno-nav-cta {
-      margin-right: 0.6rem;
-      padding: 0.7rem 1rem;
+      margin-right: 0.15rem;
+      padding: 0.65rem 0.9rem;
       border: 1px solid rgba(242, 107, 33, 0.5);
       border-radius: 999px;
       background: rgba(242, 107, 33, 0.16);
@@ -220,7 +243,7 @@
       align-items: end;
       width: min(calc(100% - 2rem), 1400px);
       min-height: calc(100vh - 2rem);
-      margin: -5.5rem auto 0;
+      margin: -4.25rem auto 0;
       padding: clamp(6.5rem, 12vw, 8.5rem) clamp(1.25rem, 5vw, 4rem) 4rem;
       border-radius: 0 0 2.75rem 2.75rem;
       background:
@@ -648,25 +671,32 @@
     }
 
     @media (min-width: 992px) {
-      .camp-inno-home .camp-inno-site-header .nav-menu {
-        display: flex !important;
-        align-items: center;
-        gap: 1.1rem;
+      .camp-inno-home .camp-inno-site-header .menu-button-5 {
+        display: none;
       }
     }
 
     @media (max-width: 991px) {
       .camp-inno-home {
-        --camp-header-offset: 7.5rem;
+        --camp-header-offset: 6.5rem;
       }
 
       .camp-inno-home .camp-inno-site-header {
-        padding-top: 0.75rem;
+        padding-top: 0.5rem;
       }
 
       .camp-inno-home .camp-inno-site-header .navbar {
         width: calc(100% - 1rem);
         padding: 0.9rem 1rem;
+      }
+
+      .camp-inno-home .camp-inno-site-header .container-5,
+      .camp-inno-home .camp-inno-site-header .grid-2 {
+        display: block;
+      }
+
+      .camp-inno-home .camp-inno-site-header .grid-copy {
+        display: none;
       }
 
       .camp-inno-home .camp-inno-site-header .nav-menu {
@@ -685,7 +715,7 @@
       .camp-inno-hero {
         width: calc(100% - 1rem);
         min-height: auto;
-        margin-top: -5rem;
+        margin-top: -3.75rem;
         padding: 6.25rem 1rem 2.75rem;
         border-radius: 0 0 2.25rem 2.25rem;
       }
