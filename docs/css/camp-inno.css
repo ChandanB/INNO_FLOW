@@ -401,8 +401,6 @@ body.camp-inno-page {
   opacity: 0.5;
 }
 
-.camp-inno-hero-frame { display: contents; }
-
 .camp-inno-hero-media {
   position: relative;
   aspect-ratio: 5 / 4;
@@ -830,36 +828,8 @@ body.camp-inno-page {
     border-radius: 0;
   }
   .camp-inno-hero-meta { position: static; margin-bottom: 1.25rem; }
-  .camp-inno-hero-frame {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(1rem, 3vw, 1.5rem);
-    padding: clamp(1rem, 3vw, 1.25rem);
-    border: 1px solid rgba(255, 253, 248, 0.12);
-    border-radius: 1.75rem;
-    background: linear-gradient(180deg, rgba(255, 253, 248, 0.12), rgba(255, 253, 248, 0.04));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 18px 50px rgba(3, 10, 20, 0.18);
-  }
-  .camp-inno-hero-media {
-    min-height: 22rem;
-    border-radius: 1.25rem;
-    box-shadow: none;
-  }
-  .camp-inno-hero-copy {
-    max-width: none;
-    margin-left: 0;
-    min-height: auto;
-    max-height: none;
-    padding: 0 clamp(0.25rem, 1vw, 0.75rem) clamp(0.5rem, 2vw, 1rem);
-    border: none;
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    box-shadow: none;
-    border-radius: 0;
-  }
+  .camp-inno-hero-media { order: 2; min-height: 22rem; }
+  .camp-inno-hero-copy { max-width: none; margin-left: 0; }
 
   .camp-inno-program-grid,
   .camp-inno-team-grid { grid-template-columns: 1fr; }
