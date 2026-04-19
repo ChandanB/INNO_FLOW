@@ -843,9 +843,14 @@ body.camp-inno-page {
   .camp-inno-hero-media {
     width: 100%;
     height: auto;
-    min-height: 22rem;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: auto;
     border-radius: 1.25rem;
     box-shadow: none;
+  }
+  .camp-inno-hero-media .camp-inno-hero-image {
+    height: auto;
   }
   .camp-inno-hero-copy {
     width: auto;
