@@ -6494,8 +6494,11 @@ figcaption {
 
 .sytycc-nav-logo {
   width: 95px;
+  height: auto;
   max-height: none;
+  aspect-ratio: auto;
   object-fit: contain;
+  display: block;
 }
 
 .nav-link-8 {
@@ -7203,17 +7206,28 @@ figcaption {
   }
 
   .sytycc-page .nav-menu {
+    align-self: center;
     justify-content: center;
     align-items: center;
+    gap: 4px;
     width: 100%;
     display: flex;
   }
 
+  .sytycc-page .nav-menu .w-nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  }
+
   .sytycc-page .grid-2 {
+    align-items: center;
     justify-self: start;
   }
 
   .sytycc-page .grid-copy {
+    align-items: center;
     justify-self: end;
   }
 }
