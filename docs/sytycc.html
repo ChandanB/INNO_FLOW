@@ -207,23 +207,210 @@
       font-size: clamp(2rem, 4vw, 2.8rem);
     }
 
-    /* Nav polish */
-    .sytycc-page .navbar {
-      background: rgba(5, 5, 5, 0.72);
+    /* Custom SYTYCC nav — studio console */
+    .sytycc-nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(5, 5, 5, 0.78);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     }
-    .sytycc-page .register-button {
+    .sytycc-nav-inner {
+      width: min(calc(100% - 2rem), 1320px);
+      margin: 0 auto;
+      padding: 0.9rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .sytycc-nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #f6f2ea;
+      min-width: 0;
+    }
+    .sytycc-nav-brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+    .sytycc-nav-brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .sytycc-nav-brand-text strong {
+      font-family: "Instrument Serif", serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+      color: #fff;
+    }
+    .sytycc-nav-brand-text span {
+      margin-top: 0.25rem;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(246, 242, 234, 0.5);
+    }
+    .sytycc-nav-onair {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0.65rem;
+      border: 1px solid rgba(243, 161, 95, 0.35);
+      border-radius: 999px;
+      background: rgba(243, 161, 95, 0.08);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #f3a15f;
+    }
+    .sytycc-nav-onair::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
       background: #f3a15f;
-      color: #050505 !important;
+      box-shadow: 0 0 0 3px rgba(243, 161, 95, 0.18);
+      animation: sytycc-pulse 1.6s ease-in-out infinite;
+    }
+    @keyframes sytycc-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .sytycc-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-left: auto;
+    }
+    .sytycc-nav-links a {
       font-family: "JetBrains Mono", monospace;
       font-size: 11px;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(246, 242, 234, 0.72);
+      transition: color 180ms ease;
+      position: relative;
     }
-    .sytycc-page .register-button:hover {
+    .sytycc-nav-links a:hover { color: #fff; }
+    .sytycc-nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -6px;
+      height: 1px;
+      background: #f3a15f;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 220ms ease;
+    }
+    .sytycc-nav-links a:hover::after { transform: scaleX(1); }
+    .sytycc-nav-social {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-right: 0.25rem;
+    }
+    .sytycc-nav-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(246, 242, 234, 0.7);
+      transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease;
+    }
+    .sytycc-nav-social a:hover {
+      color: #f3a15f;
+      border-color: rgba(243, 161, 95, 0.5);
+      background: rgba(243, 161, 95, 0.08);
+    }
+    .sytycc-nav-social svg { width: 14px; height: 14px; }
+    .sytycc-nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.1rem;
+      border-radius: 999px;
+      background: #f3a15f;
+      color: #050505;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+      box-shadow: 0 10px 24px rgba(243, 161, 95, 0.22);
+    }
+    .sytycc-nav-cta:hover {
       background: #fff;
-      color: #050505 !important;
+      color: #050505;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(243, 161, 95, 0.34);
+    }
+    .sytycc-nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      margin-left: auto;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 0.85rem;
+      background: transparent;
+      color: #f6f2ea;
+      cursor: pointer;
+    }
+    .sytycc-nav-toggle span,
+    .sytycc-nav-toggle span::before,
+    .sytycc-nav-toggle span::after {
+      display: block;
+      width: 16px;
+      height: 1.5px;
+      background: currentColor;
+    }
+    .sytycc-nav-toggle span { position: relative; }
+    .sytycc-nav-toggle span::before,
+    .sytycc-nav-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+    .sytycc-nav-toggle span::before { top: -5px; }
+    .sytycc-nav-toggle span::after  { top: 5px; }
+
+    @media (max-width: 900px) {
+      .sytycc-nav-onair,
+      .sytycc-nav-social { display: none; }
+      .sytycc-nav-links {
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin: 0.75rem 0 0;
+        padding: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .sytycc-nav-links a::after { display: none; }
+      .sytycc-nav[data-open="true"] .sytycc-nav-links { display: flex; }
+      .sytycc-nav-inner { flex-wrap: wrap; }
+      .sytycc-nav-toggle { display: inline-flex; }
+      .sytycc-nav-cta {
+        padding: 0.55rem 0.9rem;
+        font-size: 10px;
+      }
     }
 
     /* Pull quote — studio feel */
@@ -317,29 +504,56 @@
 </head>
 <body class="body sytycc-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
-    <div class="container-5 w-container">
-      <nav role="navigation" class="nav-menu w-nav-menu">
-        <a href="index.html" class="nav-link-8 w-nav-link">Camp Inno</a>
-        <a href="https://www.notion.so/campinno/e4e5e4f392e349ea99489cf665048f55?v=885a5d12e3e34bf38409a362d8a7ef85" target="_blank" rel="noopener noreferrer" class="nav-link-8 w-nav-link">Resource Hub</a>
-        <a href="https://campinno.campbrainregistration.com" target="_blank" rel="noopener noreferrer" class="register-link register-button w-nav-link">Register Now</a>
-      </nav>
-      <button type="button" aria-label="Open navigation menu" class="menu-button-5 w-nav-button">
-        <div aria-hidden="true" class="icon-4 w-icon-nav-menu"></div>
+  <header class="sytycc-nav" data-open="false">
+    <div class="sytycc-nav-inner">
+      <a href="sytycc.html" aria-current="page" class="sytycc-nav-brand">
+        <img src="https://cdn.prod.website-files.com/69deee4f781f86e9a1ccdf4c/662bbd7cda08df37323b78e5_SYTYCC_TW.png" alt="" loading="lazy">
+        <span class="sytycc-nav-brand-text">
+          <strong>SYTYCC</strong>
+          <span>A Camp Inno broadcast</span>
+        </span>
+      </a>
+      <span class="sytycc-nav-onair" aria-hidden="true">On Air</span>
+
+      <button type="button" class="sytycc-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span aria-hidden="true"></span>
       </button>
-      <div class="w-layout-grid grid-2">
-        <a href="sytycc.html" aria-current="page" class="w-inline-block w--current"><img src="https://cdn.prod.website-files.com/69deee4f781f86e9a1ccdf4c/662bbd7cda08df37323b78e5_SYTYCC_TW.png" loading="lazy" width="95" alt="SYTYCC logo" class="image-6 sytycc-nav-logo"></a>
-        <div class="w-layout-grid grid-copy">
-          <a id="w-node-_44bb5526-39e7-e08b-57a0-883865b2226b-c7527614" href="https://www.facebook.com/people/Camp-Inno/61555396717012/" target="_blank" rel="noopener noreferrer" class="sm-icon-link w-inline-block"><img src="https://cdn.prod.website-files.com/65dfe94f6194922108671f44/661607defc0a87d72a270955_Facebook.svg" loading="lazy" alt="" class="sm-icon">
-            <div class="sm-text sm-text-light">Facebook</div>
+
+      <nav class="sytycc-nav-links" aria-label="Primary">
+        <a href="index.html">Camp Inno</a>
+        <a href="#overview">What we do</a>
+        <a href="https://www.notion.so/campinno/e4e5e4f392e349ea99489cf665048f55?v=885a5d12e3e34bf38409a362d8a7ef85" target="_blank" rel="noopener noreferrer">Resource Hub</a>
+        <a href="#team">Crew</a>
+        <span class="sytycc-nav-social">
+          <a href="https://www.facebook.com/people/Camp-Inno/61555396717012/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.6c0-.87.27-1.47 1.52-1.47H16.5V4.43c-.3-.04-1.3-.13-2.47-.13-2.45 0-4.13 1.5-4.13 4.25V10.5H7.4v3h2.5V21h3.6z"/></svg>
           </a>
-          <a id="w-node-_44bb5526-39e7-e08b-57a0-883865b2226f-c7527614" href="https://www.instagram.com/campinno2024/" target="_blank" rel="noopener noreferrer" class="sm-icon-link w-inline-block"><img src="https://cdn.prod.website-files.com/65dfe94f6194922108671f44/661607defc0a87d72a270960_Instagram.svg" loading="lazy" alt="" class="sm-icon">
-            <div class="sm-text sm-text-light">Instagram</div>
+          <a href="https://www.instagram.com/soyouthinkyoucancamp.inno/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
           </a>
-        </div>
-      </div>
+        </span>
+        <a href="https://campinno.campbrainregistration.com" target="_blank" rel="noopener noreferrer" class="sytycc-nav-cta">Register <span aria-hidden="true">→</span></a>
+      </nav>
     </div>
-  </div>
+  </header>
+  <script>
+    (function(){
+      var hdr = document.querySelector('.sytycc-nav');
+      var btn = hdr && hdr.querySelector('.sytycc-nav-toggle');
+      if (!hdr || !btn) return;
+      btn.addEventListener('click', function(){
+        var open = hdr.getAttribute('data-open') === 'true';
+        hdr.setAttribute('data-open', String(!open));
+        btn.setAttribute('aria-expanded', String(!open));
+      });
+      hdr.querySelectorAll('.sytycc-nav-links a').forEach(function(a){
+        a.addEventListener('click', function(){
+          hdr.setAttribute('data-open','false');
+          btn.setAttribute('aria-expanded','false');
+        });
+      });
+    })();
+  </script>
   <main id="main-content" class="sytycc-shell">
     <section class="sytycc-hero-section">
       <div class="sytycc-hero-grid">
