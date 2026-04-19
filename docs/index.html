@@ -30,26 +30,30 @@
       --camp-shadow: 0 24px 80px rgba(4, 14, 29, 0.24);
     }
 
-    * {
+    .camp-inno-home,
+    .camp-inno-home *,
+    .camp-inno-home *::before,
+    .camp-inno-home *::after {
       box-sizing: border-box;
     }
 
-    html {
+    .camp-inno-home {
+      --camp-header-offset: 8.5rem;
       background: var(--camp-sand);
-      scroll-behavior: smooth;
-    }
-
-    body,
-    button,
-    input,
-    select,
-    textarea {
+      color: var(--camp-ink);
       font-family: "Gothic A1", sans-serif;
     }
 
-    h1,
-    h2,
-    h3 {
+    .camp-inno-home button,
+    .camp-inno-home input,
+    .camp-inno-home select,
+    .camp-inno-home textarea {
+      font-family: "Gothic A1", sans-serif;
+    }
+
+    .camp-inno-home h1,
+    .camp-inno-home h2,
+    .camp-inno-home h3 {
       margin-top: 0;
       font-family: Georgia, "Times New Roman", serif;
       font-weight: 700;
@@ -57,32 +61,36 @@
       letter-spacing: -0.03em;
     }
 
-    p {
+    .camp-inno-home p {
       margin-top: 0;
       margin-bottom: 0;
     }
 
-    a {
+    .camp-inno-home a {
       color: inherit;
       text-decoration: none;
     }
 
-    img,
-    video {
+    .camp-inno-home img,
+    .camp-inno-home video {
       display: block;
       max-width: 100%;
     }
 
-    .camp-inno-home {
-      background: var(--camp-sand);
-      color: var(--camp-ink);
-    }
-
-    .camp-inno-main {
+    .camp-inno-home .camp-inno-main {
       overflow: clip;
+      scroll-margin-top: var(--camp-header-offset);
     }
 
-    .camp-inno-eyebrow {
+    .camp-inno-home #main-content,
+    .camp-inno-home #mission,
+    .camp-inno-home #programs,
+    .camp-inno-home #team,
+    .camp-inno-home #interest {
+      scroll-margin-top: var(--camp-header-offset);
+    }
+
+    .camp-inno-home .camp-inno-eyebrow {
       letter-spacing: .18em;
       text-transform: uppercase;
       display: inline-flex;
@@ -93,7 +101,7 @@
       color: var(--camp-orange);
     }
 
-    .camp-inno-eyebrow::before {
+    .camp-inno-home .camp-inno-eyebrow::before {
       content: "";
       width: 2.75rem;
       height: 1px;
@@ -101,7 +109,7 @@
       opacity: 0.55;
     }
 
-    .skip-link {
+    .camp-inno-home .skip-link {
       position: absolute;
       top: 1rem;
       left: 1rem;
@@ -114,11 +122,11 @@
       transition: transform 180ms ease;
     }
 
-    .skip-link:focus {
+    .camp-inno-home .skip-link:focus {
       transform: translateY(0);
     }
 
-    .camp-inno-site-header {
+    .camp-inno-home .camp-inno-site-header {
       position: sticky;
       top: 0;
       z-index: 40;
@@ -127,7 +135,7 @@
         linear-gradient(180deg, rgba(8, 26, 51, 0.76), rgba(8, 26, 51, 0));
     }
 
-    .camp-inno-site-header .navbar {
+    .camp-inno-home .camp-inno-site-header .navbar {
       width: min(calc(100% - 2rem), var(--camp-max));
       margin: 0 auto;
       padding: 0.9rem 1.25rem;
@@ -138,24 +146,24 @@
       backdrop-filter: blur(18px);
     }
 
-    .camp-inno-site-header .container-5 {
+    .camp-inno-home .camp-inno-site-header .container-5 {
       width: 100%;
       max-width: none;
       padding: 0;
     }
 
-    .camp-inno-site-header .grid-2 {
+    .camp-inno-home .camp-inno-site-header .grid-2 {
       align-items: center;
     }
 
-    .camp-inno-site-header .grid-copy {
+    .camp-inno-home .camp-inno-site-header .grid-copy {
       justify-self: end;
       gap: 0.75rem;
     }
 
-    .camp-inno-site-header .sm-icon-link,
-    .camp-inno-site-header .nav-link-8,
-    .camp-inno-nav-cta {
+    .camp-inno-home .camp-inno-site-header .sm-icon-link,
+    .camp-inno-home .camp-inno-site-header .nav-link-8,
+    .camp-inno-home .camp-inno-site-header .camp-inno-nav-cta {
       position: relative;
       color: var(--camp-white);
       transition:
@@ -165,25 +173,25 @@
         border-color 180ms ease;
     }
 
-    .camp-inno-site-header .sm-icon-link:hover,
-    .camp-inno-site-header .nav-link-8:hover,
-    .camp-inno-nav-cta:hover {
+    .camp-inno-home .camp-inno-site-header .sm-icon-link:hover,
+    .camp-inno-home .camp-inno-site-header .nav-link-8:hover,
+    .camp-inno-home .camp-inno-site-header .camp-inno-nav-cta:hover {
       color: var(--camp-orange);
       transform: translateY(-1px);
     }
 
-    .camp-inno-site-header .sm-text-light {
+    .camp-inno-home .camp-inno-site-header .sm-text-light {
       color: inherit;
     }
 
-    .camp-inno-site-header .nav-link-8 {
+    .camp-inno-home .camp-inno-site-header .nav-link-8 {
       padding: 0;
       font-size: 0.95rem;
       font-weight: 600;
       background: transparent;
     }
 
-    .camp-inno-nav-cta {
+    .camp-inno-home .camp-inno-site-header .camp-inno-nav-cta {
       margin-right: 0.6rem;
       padding: 0.7rem 1rem;
       border: 1px solid rgba(242, 107, 33, 0.5);
@@ -195,7 +203,7 @@
       text-transform: uppercase;
     }
 
-    .camp-inno-site-header .menu-button-5 {
+    .camp-inno-home .camp-inno-site-header .menu-button-5 {
       color: var(--camp-white);
     }
 
@@ -564,15 +572,23 @@
       box-shadow: var(--camp-shadow);
     }
 
-    .skip-link:focus,
-    .camp-inno-button:focus-visible,
-    .camp-inno-site-header a:focus-visible {
+    .camp-inno-home .skip-link:focus,
+    .camp-inno-home .camp-inno-button:focus-visible,
+    .camp-inno-home .camp-inno-site-header a:focus-visible,
+    .camp-inno-home .camp-inno-site-header .menu-button-5:focus-visible,
+    .camp-inno-home .camp-inno-site-header .w-nav-button:focus-visible {
       outline: 2px solid var(--camp-orange);
       outline-offset: 3px;
     }
 
+    .camp-inno-home .camp-inno-site-header .menu-button-5:focus-visible,
+    .camp-inno-home .camp-inno-site-header .w-nav-button:focus-visible {
+      border-radius: 1rem;
+      background: rgba(242, 107, 33, 0.14);
+    }
+
     @media (min-width: 992px) {
-      .camp-inno-site-header .nav-menu {
+      .camp-inno-home .camp-inno-site-header .nav-menu {
         display: flex !important;
         align-items: center;
         gap: 1.1rem;
@@ -580,16 +596,20 @@
     }
 
     @media (max-width: 991px) {
-      .camp-inno-site-header {
+      .camp-inno-home {
+        --camp-header-offset: 7.5rem;
+      }
+
+      .camp-inno-home .camp-inno-site-header {
         padding-top: 0.75rem;
       }
 
-      .camp-inno-site-header .navbar {
+      .camp-inno-home .camp-inno-site-header .navbar {
         width: calc(100% - 1rem);
         padding: 0.9rem 1rem;
       }
 
-      .camp-inno-site-header .nav-menu {
+      .camp-inno-home .camp-inno-site-header .nav-menu {
         margin-top: 1rem;
         padding: 1rem;
         border-radius: 1rem;
@@ -681,13 +701,24 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
+      .camp-inno-home *,
+      .camp-inno-home *::before,
+      .camp-inno-home *::after {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
         scroll-behavior: auto !important;
+      }
+
+      .camp-inno-home .camp-inno-motion {
+        grid-template-columns: 1fr;
+        background:
+          linear-gradient(135deg, rgba(9, 27, 53, 0.94), rgba(17, 44, 81, 0.92)),
+          url("videos/PXL_20230619_213534936TS-Apple-Devices-HD-Most-Compatible-HD-1080p-poster-00001.jpg") center / cover no-repeat;
+      }
+
+      .camp-inno-home .camp-inno-motion-video {
+        display: none;
       }
     }
   </style>
