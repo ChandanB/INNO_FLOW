@@ -405,8 +405,8 @@ body.camp-inno-page {
 
 .camp-inno-hero-media {
   position: relative;
-  aspect-ratio: 5 / 4;
-  min-height: clamp(32rem, 46vw, 42rem);
+  width: 100%;
+  height: clamp(32rem, 46vw, 42rem);
   max-height: 60vh;
   border-radius: 2rem;
   overflow: hidden;
