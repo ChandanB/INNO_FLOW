@@ -1,0 +1,856 @@
+/* Camp Inno — shared design system
+   Editorial summer zine: warm paper, deep ink, tangerine punctuation. */
+
+:root {
+  --camp-ink: #081a33;
+  --camp-ink-soft: #10284d;
+  --camp-ink-faint: rgba(8, 26, 51, 0.14);
+  --camp-orange: #f26b21;
+  --camp-orange-deep: #c94e12;
+  --camp-orange-soft: rgba(242, 107, 33, 0.14);
+  --camp-sand: #f4efe6;
+  --camp-sand-deep: #ebe3d2;
+  --camp-stone: #d8d0c3;
+  --camp-white: #fffdf8;
+  --camp-max: 1200px;
+  --camp-wide: 1320px;
+  --camp-shadow: 0 24px 80px rgba(4, 14, 29, 0.24);
+  --camp-shadow-soft: 0 18px 50px rgba(8, 26, 51, 0.08);
+  --camp-radius: 1.75rem;
+  --camp-radius-sm: 1.25rem;
+}
+
+/* Grain texture — data URI SVG, low overhead */
+.camp-inno-grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.03 0 0 0 0 0.06 0 0 0 0 0.12 0 0 0 0.9 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/></svg>");
+}
+
+html.camp-inno-ready body { scroll-behavior: smooth; }
+
+body.camp-inno-home,
+body.camp-inno-page {
+  margin: 0;
+  background: var(--camp-sand);
+  color: var(--camp-ink);
+  font-family: "Gothic A1", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.camp-inno-home *,
+.camp-inno-page *,
+.camp-inno-home *::before,
+.camp-inno-page *::before,
+.camp-inno-home *::after,
+.camp-inno-page *::after { box-sizing: border-box; }
+
+.camp-inno-home,
+.camp-inno-page { --camp-header-offset: 7rem; }
+
+.camp-inno-home button,
+.camp-inno-page button,
+.camp-inno-home input,
+.camp-inno-page input,
+.camp-inno-home select,
+.camp-inno-page select,
+.camp-inno-home textarea,
+.camp-inno-page textarea { font-family: inherit; }
+
+.camp-inno-home h1,
+.camp-inno-home h2,
+.camp-inno-home h3,
+.camp-inno-page h1,
+.camp-inno-page h2,
+.camp-inno-page h3 {
+  margin-top: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+.camp-inno-home p,
+.camp-inno-page p { margin: 0; }
+
+.camp-inno-home a,
+.camp-inno-page a { color: inherit; text-decoration: none; }
+
+.camp-inno-home img,
+.camp-inno-page img,
+.camp-inno-home video,
+.camp-inno-page video { display: block; max-width: 100%; }
+
+.camp-inno-main {
+  position: relative;
+  z-index: 2;
+  overflow: clip;
+  scroll-margin-top: var(--camp-header-offset);
+}
+
+.camp-inno-main [id] { scroll-margin-top: var(--camp-header-offset); }
+
+/* Eyebrow — tracked uppercase label with hairline */
+.camp-inno-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--camp-orange);
+}
+
+.camp-inno-eyebrow::before {
+  content: "";
+  width: 2.75rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.55;
+}
+
+.camp-inno-eyebrow-ink { color: var(--camp-ink-soft); }
+
+/* Editorial marginal number — "01 / 05" motif */
+.camp-inno-marker {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: rgba(8, 26, 51, 0.45);
+  letter-spacing: 0.04em;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  background: var(--camp-white);
+  color: var(--camp-ink);
+  transform: translateY(-140%);
+  transition: transform 180ms ease;
+}
+.skip-link:focus { transform: translateY(0); }
+
+/* Site header / nav */
+.camp-inno-site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  padding: 0.7rem 0 0;
+  background: linear-gradient(180deg, rgba(8, 26, 51, 0.76), rgba(8, 26, 51, 0));
+}
+.camp-inno-site-header .camp-inno-nav {
+  width: min(calc(100% - 2rem), var(--camp-max));
+  margin: 0 auto;
+  padding: 0.75rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  border: 1px solid rgba(255, 253, 248, 0.12);
+  border-radius: 1.5rem;
+  background: rgba(8, 26, 51, 0.8);
+  box-shadow: 0 18px 40px rgba(4, 14, 29, 0.2);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.camp-inno-site-header .camp-inno-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+}
+.camp-inno-site-header .camp-inno-brand img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+.camp-inno-site-header .camp-inno-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  color: var(--camp-white);
+}
+.camp-inno-site-header .camp-inno-brand-text strong {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+.camp-inno-site-header .camp-inno-brand-text span {
+  margin-top: 0.2rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 253, 248, 0.6);
+}
+.camp-inno-site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+.camp-inno-site-header nav a {
+  position: relative;
+  color: var(--camp-white);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  transition: color 180ms ease, transform 180ms ease;
+}
+.camp-inno-site-header nav a:hover { color: var(--camp-orange); transform: translateY(-1px); }
+.camp-inno-site-header nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.4rem;
+  height: 1px;
+  background: var(--camp-orange);
+}
+.camp-inno-site-header .camp-inno-nav-cta {
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(242, 107, 33, 0.5);
+  border-radius: 999px;
+  background: rgba(242, 107, 33, 0.16);
+  font-weight: 700;
+}
+.camp-inno-site-header .camp-inno-nav-cta:hover {
+  background: rgba(242, 107, 33, 0.28);
+  border-color: var(--camp-orange);
+  color: var(--camp-white);
+}
+.camp-inno-site-header .camp-inno-nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  padding: 0;
+  border: 1px solid rgba(255, 253, 248, 0.2);
+  border-radius: 0.9rem;
+  background: transparent;
+  color: var(--camp-white);
+  cursor: pointer;
+}
+.camp-inno-site-header .camp-inno-nav-toggle span,
+.camp-inno-site-header .camp-inno-nav-toggle span::before,
+.camp-inno-site-header .camp-inno-nav-toggle span::after {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: currentColor;
+}
+.camp-inno-site-header .camp-inno-nav-toggle span { position: relative; }
+.camp-inno-site-header .camp-inno-nav-toggle span::before,
+.camp-inno-site-header .camp-inno-nav-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.camp-inno-site-header .camp-inno-nav-toggle span::before { top: -6px; }
+.camp-inno-site-header .camp-inno-nav-toggle span::after { top: 6px; }
+
+/* Buttons */
+.camp-inno-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3.5rem;
+  padding: 0.95rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+.camp-inno-button:hover { transform: translateY(-2px); }
+.camp-inno-button .arrow {
+  display: inline-block;
+  transition: transform 220ms ease;
+}
+.camp-inno-button:hover .arrow { transform: translateX(3px); }
+
+.camp-inno-button-primary {
+  background: var(--camp-orange);
+  color: var(--camp-white);
+  box-shadow: 0 16px 30px rgba(242, 107, 33, 0.28);
+}
+.camp-inno-button-primary:hover {
+  background: var(--camp-orange-deep);
+  box-shadow: 0 18px 38px rgba(201, 78, 18, 0.36);
+}
+.camp-inno-button-secondary {
+  border-color: rgba(255, 253, 248, 0.32);
+  background: rgba(255, 253, 248, 0.08);
+  color: var(--camp-white);
+}
+.camp-inno-button-secondary:hover {
+  border-color: rgba(242, 107, 33, 0.55);
+  background: rgba(242, 107, 33, 0.12);
+  color: var(--camp-orange);
+}
+.camp-inno-button-ink {
+  border-color: rgba(8, 26, 51, 0.18);
+  background: transparent;
+  color: var(--camp-ink);
+}
+.camp-inno-button-ink:hover {
+  border-color: var(--camp-orange);
+  color: var(--camp-orange-deep);
+}
+
+/* Reveal animation */
+[data-reveal] { opacity: 1; transform: none; transition: opacity 520ms ease, transform 520ms ease; }
+.camp-inno-ready [data-reveal] { opacity: 0; transform: translateY(20px); }
+.camp-inno-ready [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+/* Section scaffolding */
+.camp-inno-container {
+  width: min(calc(100% - 2rem), var(--camp-max));
+  margin: 0 auto;
+}
+.camp-inno-container-wide {
+  width: min(calc(100% - 2rem), var(--camp-wide));
+  margin: 0 auto;
+}
+
+.camp-inno-section-head {
+  max-width: 42rem;
+  margin-bottom: 2.5rem;
+}
+.camp-inno-section-head h2 {
+  margin: 0.9rem 0 1rem;
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  color: var(--camp-ink);
+  text-wrap: balance;
+}
+.camp-inno-section-head p {
+  font-size: 1.05rem;
+  color: rgba(8, 26, 51, 0.78);
+  max-width: 38rem;
+}
+
+/* HERO — shared bones */
+.camp-inno-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: end;
+  width: 100%;
+  min-height: calc(100vh - 2rem);
+  margin: -4.25rem 0 0;
+  padding: clamp(6.5rem, 12vw, 8.5rem) clamp(1.25rem, 5vw, 4rem) 4rem;
+  background:
+    radial-gradient(circle at top right, rgba(242, 107, 33, 0.28), transparent 32%),
+    linear-gradient(135deg, #061226 0%, var(--camp-ink) 52%, #15345d 100%);
+  color: var(--camp-white);
+  overflow: hidden;
+  isolation: isolate;
+}
+.camp-inno-hero::before {
+  content: "";
+  position: absolute;
+  inset: auto -10% -35% 40%;
+  height: 24rem;
+  background: radial-gradient(circle, rgba(242, 107, 33, 0.18), transparent 68%);
+  pointer-events: none;
+  z-index: -1;
+}
+.camp-inno-hero-meta {
+  position: absolute;
+  top: clamp(6rem, 10vw, 7.5rem);
+  left: clamp(1.25rem, 5vw, 4rem);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: rgba(255, 253, 248, 0.6);
+  letter-spacing: 0.02em;
+}
+.camp-inno-hero-meta::before {
+  content: "";
+  width: 2.25rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.camp-inno-hero-media {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  min-height: clamp(32rem, 46vw, 42rem);
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: var(--camp-shadow);
+}
+.camp-inno-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 26, 51, 0) 28%, rgba(8, 26, 51, 0.44) 100%);
+  pointer-events: none;
+}
+.camp-inno-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.camp-inno-hero-copy {
+  position: relative;
+  max-width: 31rem;
+  margin-left: auto;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid rgba(255, 253, 248, 0.12);
+  border-radius: 1.75rem;
+  background: linear-gradient(180deg, rgba(255, 253, 248, 0.12), rgba(255, 253, 248, 0.04));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 18px 50px rgba(3, 10, 20, 0.18);
+}
+.camp-inno-hero-copy h1 {
+  margin-bottom: 1.25rem;
+  font-size: clamp(3rem, 7.5vw, 5.8rem);
+  text-wrap: balance;
+}
+.camp-inno-hero-copy h1 em {
+  font-style: italic;
+  color: var(--camp-orange);
+  font-weight: 400;
+}
+.camp-inno-hero-copy p {
+  max-width: 28rem;
+  font-size: clamp(1.02rem, 2vw, 1.18rem);
+  color: rgba(255, 253, 248, 0.84);
+}
+.camp-inno-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* Editorial panel — white card floating up into dark hero */
+.camp-inno-panel {
+  position: relative;
+  margin-top: -4rem;
+  padding: clamp(2.5rem, 6vw, 4rem);
+  border-radius: 2rem;
+  background: var(--camp-white);
+  box-shadow: var(--camp-shadow-soft);
+}
+
+/* Values / info card grid */
+.camp-inno-values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  counter-reset: camp-value;
+}
+.camp-inno-values-grid article {
+  position: relative;
+  padding: 2rem 1.6rem 1.85rem;
+  border: 1px solid rgba(8, 26, 51, 0.08);
+  border-radius: 1.5rem;
+  background: linear-gradient(180deg, rgba(244, 239, 230, 0.55), rgba(255, 253, 248, 0.94));
+  counter-increment: camp-value;
+  overflow: hidden;
+}
+.camp-inno-values-grid article::before {
+  content: "0" counter(camp-value);
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--camp-orange);
+  letter-spacing: 0.04em;
+}
+.camp-inno-values-grid h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.55rem;
+  color: var(--camp-ink-soft);
+}
+.camp-inno-values-grid p { color: rgba(8, 26, 51, 0.78); }
+
+/* Program tracks — staircase */
+.camp-inno-programs {
+  position: relative;
+  padding: 5.5rem 0 2rem;
+}
+.camp-inno-program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  counter-reset: camp-program;
+  align-items: end;
+}
+.camp-inno-program {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 22rem;
+  padding: 5.25rem 1.85rem 2rem;
+  border-top: 4px solid var(--camp-orange);
+  border-right: 1px solid rgba(8, 26, 51, 0.08);
+  border-bottom: 1px solid rgba(8, 26, 51, 0.08);
+  border-left: 1px solid rgba(8, 26, 51, 0.08);
+  border-radius: 1.8rem;
+  background: linear-gradient(180deg, rgba(255, 253, 248, 0.35), rgba(255, 253, 248, 0.95));
+  box-shadow: 0 18px 50px rgba(8, 26, 51, 0.06);
+  overflow: hidden;
+}
+.camp-inno-program::before {
+  counter-increment: camp-program;
+  content: "0" counter(camp-program);
+  position: absolute;
+  top: 1rem;
+  left: 1.4rem;
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  line-height: 1;
+  color: rgba(8, 26, 51, 0.08);
+}
+.camp-inno-program:nth-child(2) { transform: translateY(2rem); }
+.camp-inno-program:nth-child(3) { transform: translateY(4rem); }
+.camp-inno-program h3 {
+  margin-bottom: 0.9rem;
+  font-size: 2rem;
+  color: var(--camp-ink);
+}
+.camp-inno-program p { max-width: 17rem; color: rgba(8, 26, 51, 0.8); }
+.camp-inno-program-tag {
+  margin-bottom: 1rem;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--camp-orange-deep);
+}
+
+/* Motion / atmosphere band */
+.camp-inno-motion {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: stretch;
+  width: min(calc(100% - 2rem), var(--camp-wide));
+  margin: 6rem auto;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 2.25rem;
+  background:
+    radial-gradient(circle at left center, rgba(242, 107, 33, 0.18), transparent 32%),
+    linear-gradient(135deg, #091b35 0%, #112c51 100%);
+  color: var(--camp-white);
+  box-shadow: var(--camp-shadow);
+  overflow: hidden;
+}
+.camp-inno-motion-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.camp-inno-motion-copy p {
+  max-width: 26rem;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  line-height: 1.4;
+  color: rgba(255, 253, 248, 0.88);
+  margin-top: 1rem;
+}
+.camp-inno-motion-copy blockquote {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--camp-white);
+}
+.camp-inno-motion-copy cite {
+  display: block;
+  margin-top: 1rem;
+  font-family: "Gothic A1", sans-serif;
+  font-style: normal;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 253, 248, 0.6);
+}
+.camp-inno-motion-video {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 25rem;
+  border: 1px solid rgba(255, 253, 248, 0.12);
+  border-radius: 1.6rem;
+  object-fit: cover;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* Team — editorial portraits */
+.camp-inno-team {
+  padding: 1rem 0 5.5rem;
+}
+.camp-inno-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(15rem, 1fr));
+  gap: 1.75rem;
+  align-items: start;
+  counter-reset: camp-person;
+}
+.camp-inno-team-card {
+  position: relative;
+  min-width: 0;
+  counter-increment: camp-person;
+}
+.camp-inno-team-card:nth-child(3n + 2) { margin-top: 2.25rem; }
+.camp-inno-team-card:nth-child(3n + 3) { margin-top: 4.5rem; }
+.camp-inno-team-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  box-shadow: 0 18px 40px rgba(8, 26, 51, 0.12);
+}
+.camp-inno-team-media::after {
+  counter-increment: none;
+  content: "0" counter(camp-person);
+  position: absolute;
+  top: 1rem;
+  left: 1.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(8, 26, 51, 0.82);
+  color: var(--camp-white);
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+.camp-inno-team-image {
+  width: 100%;
+  height: clamp(19rem, 32vw, 27rem);
+  object-fit: cover;
+  object-position: center;
+  transition: transform 600ms cubic-bezier(.2,.8,.2,1);
+}
+.camp-inno-team-card:hover .camp-inno-team-image { transform: scale(1.03); }
+.camp-inno-team-role {
+  margin: 1.3rem 0 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--camp-orange-deep);
+}
+.camp-inno-team-card h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.85rem;
+  color: var(--camp-ink);
+}
+.camp-inno-team-card p {
+  max-width: 22rem;
+  color: rgba(8, 26, 51, 0.78);
+  font-size: 0.98rem;
+}
+
+/* Text link with hairline underline */
+.camp-inno-text-link {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(242, 107, 33, 0.45);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--camp-orange-deep);
+  transition: color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+.camp-inno-text-link:hover {
+  color: var(--camp-orange);
+  border-color: var(--camp-orange);
+  transform: translateX(3px);
+}
+
+/* Interest / CTA footer band */
+.camp-inno-interest {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.5rem;
+  min-height: 14rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: clamp(2rem, 5vw, 3rem);
+  border-radius: 2rem;
+  background:
+    linear-gradient(135deg, rgba(8, 26, 51, 0.98), rgba(16, 40, 77, 0.92)),
+    var(--camp-ink);
+  box-shadow: var(--camp-shadow);
+  color: var(--camp-white);
+}
+.camp-inno-interest h2 {
+  margin: 0.85rem 0;
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  color: var(--camp-white);
+  text-wrap: balance;
+}
+.camp-inno-interest p {
+  max-width: 28rem;
+  font-size: 1.05rem;
+  color: rgba(255, 253, 248, 0.78);
+}
+
+/* Site footer */
+.camp-inno-footer {
+  position: relative;
+  padding: 4rem 0 3rem;
+  color: rgba(8, 26, 51, 0.7);
+  font-size: 0.9rem;
+}
+.camp-inno-footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--camp-ink-faint);
+}
+.camp-inno-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.camp-inno-footer-brand strong {
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  color: var(--camp-ink);
+  letter-spacing: -0.02em;
+}
+.camp-inno-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.camp-inno-footer-links a {
+  color: var(--camp-ink-soft);
+  transition: color 180ms ease;
+}
+.camp-inno-footer-links a:hover { color: var(--camp-orange-deep); }
+.camp-inno-footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--camp-ink-faint);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(8, 26, 51, 0.55);
+}
+
+/* Focus */
+.skip-link:focus,
+.camp-inno-button:focus-visible,
+.camp-inno-site-header a:focus-visible,
+.camp-inno-site-header button:focus-visible {
+  outline: 2px solid var(--camp-orange);
+  outline-offset: 3px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (min-width: 992px) {
+  .camp-inno-site-header .camp-inno-nav-toggle { display: none; }
+}
+
+@media (max-width: 991px) {
+  .camp-inno-home,
+  .camp-inno-page { --camp-header-offset: 6.5rem; }
+
+  .camp-inno-site-header { padding-top: 0.5rem; }
+  .camp-inno-site-header .camp-inno-nav {
+    width: calc(100% - 1rem);
+    padding: 0.8rem 1rem;
+    flex-wrap: wrap;
+  }
+  .camp-inno-site-header nav {
+    width: 100%;
+    margin: 0.75rem 0 0;
+    padding: 0.9rem;
+    border-radius: 1rem;
+    background: rgba(8, 26, 51, 0.96);
+    display: none;
+  }
+  .camp-inno-site-header[data-nav-open="true"] nav { display: flex; }
+  .camp-inno-site-header .camp-inno-nav-toggle { display: inline-flex; }
+
+  .camp-inno-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    margin-top: -3.75rem;
+    padding: 6.25rem 1rem 2.75rem;
+    border-radius: 0;
+  }
+  .camp-inno-hero-meta { position: static; margin-bottom: 1.25rem; }
+  .camp-inno-hero-media { order: 2; min-height: 22rem; }
+  .camp-inno-hero-copy { max-width: none; margin-left: 0; }
+
+  .camp-inno-program-grid,
+  .camp-inno-team-grid { grid-template-columns: 1fr; }
+  .camp-inno-program:nth-child(2),
+  .camp-inno-program:nth-child(3),
+  .camp-inno-team-card:nth-child(3n + 2),
+  .camp-inno-team-card:nth-child(3n + 3) { transform: none; margin-top: 0; }
+
+  .camp-inno-motion { grid-template-columns: 1fr; margin: 4rem auto; }
+  .camp-inno-footer-grid { grid-template-columns: 1fr; }
+  .camp-inno-interest { flex-direction: column; align-items: start; }
+}
+
+@media (max-width: 767px) {
+  .camp-inno-values-grid { grid-template-columns: 1fr; }
+  .camp-inno-hero-copy h1 { font-size: clamp(2.6rem, 14vw, 4rem); }
+  .camp-inno-hero-actions { flex-direction: column; }
+  .camp-inno-button { width: 100%; }
+  .camp-inno-program { min-height: 18rem; }
+  .camp-inno-motion-video { min-height: 18rem; }
+  .camp-inno-panel { margin-top: -2rem; padding: 2rem 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  .camp-inno-motion { grid-template-columns: 1fr; }
+  .camp-inno-motion-video { display: none; }
+  [data-reveal], .camp-inno-ready [data-reveal], .camp-inno-ready [data-reveal].is-visible {
+    opacity: 1; transform: none;
+  }
+}

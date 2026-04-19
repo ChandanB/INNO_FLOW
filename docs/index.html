@@ -1,1017 +1,287 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Sat Apr 18 2026 09:35:20 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="65dfe94f6194922108671f33" data-wf-site="65dfe94f6194922108671f44" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Camp Inno | A New Kind of Camp Is Taking Shape</title>
+  <title>Camp Inno — A new kind of camp is taking shape</title>
   <meta content="Camp Inno is building a premium, innovation-forward summer camp experience rooted in trust, creativity, and access." name="description">
-  <meta content="Camp Inno | A New Kind of Camp Is Taking Shape" property="og:title">
+  <meta content="Camp Inno — A new kind of camp is taking shape" property="og:title">
   <meta content="Camp Inno is building a premium, innovation-forward summer camp experience rooted in trust, creativity, and access." property="og:description">
   <meta content="images/DSC02084-Edited-min.jpg" property="og:image">
-  <meta content="Camp Inno | A New Kind of Camp Is Taking Shape" property="twitter:title">
-  <meta content="Camp Inno is building a premium, innovation-forward summer camp experience rooted in trust, creativity, and access." property="twitter:description">
-  <meta content="images/DSC02084-Edited-min.jpg" property="twitter:image">
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
+  <meta content="Camp Inno — A new kind of camp is taking shape" property="twitter:title">
+  <meta content="Camp Inno is building a premium, innovation-forward summer camp experience rooted in trust, creativity, and access." property="twitter:description">
+  <meta content="images/DSC02084-Edited-min.jpg" property="twitter:image">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta content="Webflow" name="generator">
-  <link href="css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/inno-testing-c1472ac27c4ff37fb8193c9.webflow.css" rel="stylesheet" type="text/css">
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Gothic+A1:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="css/camp-inno.css" rel="stylesheet" type="text/css">
   <script>
     if ('IntersectionObserver' in window) {
       document.documentElement.classList.add('camp-inno-ready');
     }
   </script>
   <style>
-    :root {
-      --camp-ink: #081a33;
-      --camp-ink-soft: #10284d;
-      --camp-orange: #f26b21;
-      --camp-orange-deep: #c94e12;
-      --camp-sand: #f4efe6;
-      --camp-stone: #d8d0c3;
-      --camp-white: #fffdf8;
-      --camp-max: 1200px;
-      --camp-shadow: 0 24px 80px rgba(4, 14, 29, 0.24);
-    }
-
-    .camp-inno-home,
-    .camp-inno-home *,
-    .camp-inno-home *::before,
-    .camp-inno-home *::after {
-      box-sizing: border-box;
-    }
-
-    .camp-inno-home {
-      --camp-header-offset: 7rem;
-      background: var(--camp-sand);
-      color: var(--camp-ink);
-      font-family: "Gothic A1", sans-serif;
-    }
-
-    .camp-inno-home button,
-    .camp-inno-home input,
-    .camp-inno-home select,
-    .camp-inno-home textarea {
-      font-family: "Gothic A1", sans-serif;
-    }
-
+    /* index-specific: Fraunces display override for a more distinctive serif */
     .camp-inno-home h1,
     .camp-inno-home h2,
-    .camp-inno-home h3 {
-      margin-top: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 700;
-      line-height: 1.04;
-      letter-spacing: -0.03em;
+    .camp-inno-home h3,
+    .camp-inno-home .camp-inno-motion-copy blockquote {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-variation-settings: "opsz" 140, "SOFT" 50;
     }
-
-    .camp-inno-home p {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    .camp-inno-home a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .camp-inno-home img,
-    .camp-inno-home video {
-      display: block;
-      max-width: 100%;
-    }
-
-    .camp-inno-home .camp-inno-main {
-      overflow: clip;
-      scroll-margin-top: var(--camp-header-offset);
-    }
-
-    .camp-inno-home #main-content,
-    .camp-inno-home #mission,
-    .camp-inno-home #programs,
-    .camp-inno-home #team,
-    .camp-inno-home #interest {
-      scroll-margin-top: var(--camp-header-offset);
-    }
-
-    .camp-inno-home .camp-inno-eyebrow {
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.76rem;
-      font-weight: 700;
-      color: var(--camp-orange);
-    }
-
-    .camp-inno-home .camp-inno-eyebrow::before {
-      content: "";
-      width: 2.75rem;
-      height: 1px;
-      background: currentColor;
-      opacity: 0.55;
-    }
-
-    .camp-inno-home .skip-link {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      z-index: 100;
-      padding: 0.8rem 1rem;
-      border-radius: 999px;
-      background: var(--camp-white);
-      color: var(--camp-ink);
-      transform: translateY(-140%);
-      transition: transform 180ms ease;
-    }
-
-    .camp-inno-home .skip-link:focus {
-      transform: translateY(0);
-    }
-
-    .camp-inno-home .camp-inno-site-header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      padding: 0.7rem 0 0;
-      background:
-        linear-gradient(180deg, rgba(8, 26, 51, 0.76), rgba(8, 26, 51, 0));
-    }
-
-    .camp-inno-home .camp-inno-site-header .navbar {
-      width: min(calc(100% - 2rem), var(--camp-max));
-      margin: 0 auto;
-      padding: 0.8rem 1.1rem;
-      border: 1px solid rgba(255, 253, 248, 0.12);
-      border-radius: 1.5rem;
-      background: rgba(8, 26, 51, 0.8);
-      box-shadow: 0 18px 40px rgba(4, 14, 29, 0.2);
-      backdrop-filter: blur(18px);
-    }
-
-    .camp-inno-home .camp-inno-site-header .container-5 {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.25rem;
-      width: 100%;
-      max-width: none;
-      min-width: 0;
-      padding: 0;
-    }
-
-    .camp-inno-home .camp-inno-site-header .grid-2 {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex: 0 1 auto;
-      min-width: 0;
-      padding-right: 0 !important;
-    }
-
-    .camp-inno-home .camp-inno-site-header .grid-copy {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding-right: 0 !important;
-      min-width: 0;
-    }
-
-    .camp-inno-home .camp-inno-site-header .nav-menu {
-      position: static;
-      float: none;
-      right: auto;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex: 1 1 auto;
-      min-width: 0;
-      max-width: 100%;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-      margin-left: auto;
-      padding: 0;
-      background: transparent !important;
-      border: 0;
-    }
-
-    .camp-inno-home .camp-inno-site-header .sm-icon-link,
-    .camp-inno-home .camp-inno-site-header .nav-link-8,
-    .camp-inno-home .camp-inno-site-header .camp-inno-nav-cta {
-      position: relative;
-      color: var(--camp-white);
-      transition:
-        color 180ms ease,
-        transform 180ms ease,
-        background-color 180ms ease,
-        border-color 180ms ease;
-    }
-
-    .camp-inno-home .camp-inno-site-header .sm-icon-link:hover,
-    .camp-inno-home .camp-inno-site-header .nav-link-8:hover,
-    .camp-inno-home .camp-inno-site-header .camp-inno-nav-cta:hover {
-      color: var(--camp-orange);
-      transform: translateY(-1px);
-    }
-
-    .camp-inno-home .camp-inno-site-header .sm-text-light {
-      color: inherit;
-    }
-
-    .camp-inno-home .camp-inno-site-header .nav-link-8 {
-      padding: 0;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      background: transparent;
-    }
-
-    .camp-inno-home .camp-inno-site-header .camp-inno-nav-cta {
-      margin-right: 0.15rem;
-      padding: 0.65rem 0.9rem;
-      border: 1px solid rgba(242, 107, 33, 0.5);
-      border-radius: 999px;
-      background: rgba(242, 107, 33, 0.16);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .camp-inno-home .camp-inno-site-header .menu-button-5 {
-      color: var(--camp-white);
-    }
-
-    .camp-inno-hero {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-      gap: clamp(1.5rem, 4vw, 3.5rem);
-      align-items: end;
-      width: min(calc(100% - 2rem), 1400px);
-      min-height: calc(100vh - 2rem);
-      margin: -4.25rem auto 0;
-      padding: clamp(6.5rem, 12vw, 8.5rem) clamp(1.25rem, 5vw, 4rem) 4rem;
-      border-radius: 0 0 2.75rem 2.75rem;
-      background:
-        radial-gradient(circle at top right, rgba(242, 107, 33, 0.28), transparent 32%),
-        linear-gradient(135deg, #061226 0%, var(--camp-ink) 52%, #15345d 100%);
-      color: var(--camp-white);
-      overflow: hidden;
-      isolation: isolate;
-    }
-
-    .camp-inno-hero::before {
-      content: "";
-      position: absolute;
-      inset: auto -10% -35% 40%;
-      height: 24rem;
-      background: radial-gradient(circle, rgba(242, 107, 33, 0.18), transparent 68%);
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .camp-inno-hero-media {
-      position: relative;
-      aspect-ratio: 5 / 4;
-      min-height: clamp(32rem, 46vw, 42rem);
-      border-radius: 2rem;
-      overflow: hidden;
-      box-shadow: var(--camp-shadow);
-    }
-
-    .camp-inno-hero-media::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(8, 26, 51, 0) 28%, rgba(8, 26, 51, 0.44) 100%);
-      pointer-events: none;
-    }
-
-    .camp-inno-hero-image {
-      width: 100%;
-      height: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .camp-inno-hero-copy {
-      position: relative;
-      max-width: 31rem;
-      margin-left: auto;
-      padding: clamp(1.5rem, 3vw, 2.25rem);
-      border: 1px solid rgba(255, 253, 248, 0.12);
-      border-radius: 1.75rem;
-      background: linear-gradient(180deg, rgba(255, 253, 248, 0.12), rgba(255, 253, 248, 0.04));
-      backdrop-filter: blur(10px);
-      box-shadow: 0 18px 50px rgba(3, 10, 20, 0.18);
-    }
-
     .camp-inno-hero-copy h1 {
-      margin-bottom: 1.25rem;
-      font-size: clamp(3.35rem, 8vw, 6.4rem);
-      text-wrap: balance;
+      font-variation-settings: "opsz" 144, "SOFT" 100;
     }
-
-    .camp-inno-hero-copy p {
-      max-width: 28rem;
-      font-size: clamp(1.05rem, 2vw, 1.2rem);
-      color: rgba(255, 253, 248, 0.82);
-    }
-
-    .camp-inno-hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      margin-top: 2rem;
-    }
-
-    .camp-inno-button,
-    .camp-inno-button-primary,
-    .camp-inno-button-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      min-height: 3.5rem;
-      padding: 0.95rem 1.4rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      transition:
-        transform 180ms ease,
-        box-shadow 180ms ease,
-        border-color 180ms ease,
-        background-color 180ms ease,
-        color 180ms ease;
-    }
-
-    .camp-inno-button:hover,
-    .camp-inno-button-primary:hover,
-    .camp-inno-button-secondary:hover {
-      transform: translateY(-2px);
-    }
-
-    .camp-inno-button-primary {
-      background: var(--camp-orange);
-      color: var(--camp-white);
-      box-shadow: 0 16px 30px rgba(242, 107, 33, 0.28);
-    }
-
-    .camp-inno-button-primary:hover {
-      background: var(--camp-orange-deep);
-      box-shadow: 0 18px 38px rgba(201, 78, 18, 0.34);
-    }
-
-    .camp-inno-button-secondary {
-      border-color: rgba(255, 253, 248, 0.32);
-      background: rgba(255, 253, 248, 0.08);
-      color: var(--camp-white);
-    }
-
-    .camp-inno-button-secondary:hover {
-      border-color: rgba(242, 107, 33, 0.42);
-      background: rgba(242, 107, 33, 0.12);
-      color: var(--camp-orange);
-    }
-
-    .camp-inno-home [data-reveal] {
-      opacity: 1;
-      transform: none;
-      transition:
-        opacity 420ms ease,
-        transform 420ms ease;
-    }
-
-    .camp-inno-ready .camp-inno-home [data-reveal] {
-      opacity: 0;
-      transform: translateY(18px);
-    }
-
-    .camp-inno-ready .camp-inno-home [data-reveal].is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .camp-inno-mission,
-    .camp-inno-programs,
-    .camp-inno-team,
-    .camp-inno-interest {
-      width: min(calc(100% - 2rem), var(--camp-max));
-      margin: 0 auto;
-    }
-
-    .camp-inno-mission {
-      position: relative;
-      margin-top: -4rem;
-      padding: clamp(2.5rem, 6vw, 4rem);
-      border-radius: 2rem;
-      background: var(--camp-white);
-      box-shadow: 0 22px 60px rgba(7, 19, 39, 0.08);
-    }
-
-    .camp-inno-section-head {
-      max-width: 42rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .camp-inno-section-head h2 {
-      margin-bottom: 1rem;
-      font-size: clamp(2.3rem, 4vw, 3.5rem);
-      color: var(--camp-ink);
-      text-wrap: balance;
-    }
-
-    .camp-inno-section-head p {
-      font-size: 1.05rem;
-      color: rgba(8, 26, 51, 0.78);
-    }
-
-    .camp-inno-values-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.1rem;
-    }
-
-    .camp-inno-values-grid article {
-      padding: 1.5rem 1.5rem 1.75rem;
-      border: 1px solid rgba(8, 26, 51, 0.08);
-      border-radius: 1.5rem;
-      background: linear-gradient(180deg, rgba(244, 239, 230, 0.5), rgba(255, 253, 248, 0.94));
-    }
-
-    .camp-inno-values-grid h3 {
-      margin-bottom: 0.75rem;
-      font-size: 1.55rem;
-      color: var(--camp-ink-soft);
-    }
-
-    .camp-inno-values-grid p {
-      color: rgba(8, 26, 51, 0.78);
-    }
-
-    .camp-inno-programs {
-      position: relative;
-      padding: 5.5rem 0 1rem;
-    }
-
-    .camp-inno-program-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-      counter-reset: camp-program;
-      align-items: end;
-    }
-
-    .camp-inno-program {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      min-height: 22rem;
-      padding: 5.25rem 1.85rem 2rem;
-      border-top: 4px solid var(--camp-orange);
-      border-right: 1px solid rgba(8, 26, 51, 0.08);
-      border-bottom: 1px solid rgba(8, 26, 51, 0.08);
-      border-left: 1px solid rgba(8, 26, 51, 0.08);
-      border-radius: 1.8rem;
-      background:
-        linear-gradient(180deg, rgba(255, 253, 248, 0.35), rgba(255, 253, 248, 0.95));
-      box-shadow: 0 18px 50px rgba(8, 26, 51, 0.06);
-      overflow: hidden;
-    }
-
-    .camp-inno-program::before {
-      counter-increment: camp-program;
-      content: "0" counter(camp-program);
-      position: absolute;
-      top: 1rem;
-      left: 1.4rem;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 5rem;
-      line-height: 1;
-      color: rgba(8, 26, 51, 0.08);
-    }
-
-    .camp-inno-program:nth-child(2) {
-      transform: translateY(2rem);
-    }
-
-    .camp-inno-program:nth-child(3) {
-      transform: translateY(4rem);
-    }
-
-    .camp-inno-program h3 {
-      margin-bottom: 0.9rem;
-      font-size: 2rem;
-      color: var(--camp-ink);
-    }
-
-    .camp-inno-program p {
-      max-width: 17rem;
-      color: rgba(8, 26, 51, 0.8);
-    }
-
-    .camp-inno-motion {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-      gap: clamp(1.5rem, 4vw, 3rem);
-      align-items: stretch;
-      width: min(calc(100% - 2rem), 1320px);
-      margin: 6rem auto;
-      padding: clamp(1.5rem, 3vw, 2rem);
-      border-radius: 2.25rem;
-      background:
-        radial-gradient(circle at left center, rgba(242, 107, 33, 0.18), transparent 32%),
-        linear-gradient(135deg, #091b35 0%, #112c51 100%);
-      color: var(--camp-white);
-      box-shadow: var(--camp-shadow);
-      overflow: hidden;
-    }
-
-    .camp-inno-motion-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 1.5rem;
-    }
-
-    .camp-inno-motion-copy p {
-      max-width: 24rem;
-      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-      line-height: 1.4;
-      color: rgba(255, 253, 248, 0.88);
-    }
-
-    .camp-inno-motion-video {
-      width: 100%;
-      height: 100%;
-      aspect-ratio: 16 / 10;
-      min-height: 25rem;
-      border: 1px solid rgba(255, 253, 248, 0.12);
-      border-radius: 1.6rem;
-      object-fit: cover;
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
-    }
-
-    .camp-inno-team {
-      padding: 1rem 0 5.5rem;
-    }
-
-    .camp-inno-team-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(15rem, 1fr));
-      gap: 1.5rem;
-      align-items: start;
-    }
-
-    .camp-inno-team-card {
-      position: relative;
-      padding: 0;
-      min-width: 0;
-    }
-
-    .camp-inno-team-card:nth-child(2) {
-      margin-top: 2.25rem;
-    }
-
-    .camp-inno-team-card:nth-child(3) {
-      margin-top: 4.5rem;
-    }
-
-    .camp-inno-team-image {
-      width: 100%;
-      height: clamp(19rem, 32vw, 27rem);
-      border-radius: 2rem;
-      object-fit: cover;
-      box-shadow: 0 18px 40px rgba(8, 26, 51, 0.12);
-    }
-
-    .camp-inno-team-card h3 {
-      margin: 1.35rem 0 0.6rem;
-      font-size: 2rem;
-      color: var(--camp-ink);
-    }
-
-    .camp-inno-team-card p {
-      max-width: 18rem;
-      color: rgba(8, 26, 51, 0.78);
-    }
-
-    .camp-inno-text-link {
-      display: inline-flex;
-      margin-top: 2.5rem;
-      padding-bottom: 0.3rem;
-      border-bottom: 1px solid rgba(242, 107, 33, 0.45);
-      font-size: 0.92rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--camp-orange-deep);
-      transition:
-        color 180ms ease,
-        border-color 180ms ease;
-    }
-
-    .camp-inno-text-link:hover {
-      color: var(--camp-orange);
-      border-color: var(--camp-orange);
-    }
-
-    .camp-inno-interest {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 1.5rem;
-      min-height: 14rem;
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-      padding: clamp(2rem, 5vw, 3rem);
-      border-radius: 2rem;
-      background:
-        linear-gradient(135deg, rgba(8, 26, 51, 0.98), rgba(16, 40, 77, 0.92)),
-        var(--camp-ink);
-      box-shadow: var(--camp-shadow);
-    }
-
-    .camp-inno-interest-copy {
-      max-width: 34rem;
-      color: var(--camp-white);
-    }
-
-    .camp-inno-interest-copy h2 {
-      margin-bottom: 0.85rem;
-      font-size: clamp(2.2rem, 4vw, 3.25rem);
-      color: var(--camp-white);
-      text-wrap: balance;
-    }
-
-    .camp-inno-interest-copy p {
-      max-width: 28rem;
-      font-size: 1.05rem;
-      color: rgba(255, 253, 248, 0.78);
-    }
-
-    .camp-inno-interest-actions {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-
-    .camp-inno-home .skip-link:focus,
-    .camp-inno-home .camp-inno-button:focus-visible,
-    .camp-inno-home .camp-inno-site-header a:focus-visible,
-    .camp-inno-home .camp-inno-site-header .menu-button-5:focus-visible,
-    .camp-inno-home .camp-inno-site-header .w-nav-button:focus-visible {
-      outline: 2px solid var(--camp-orange);
-      outline-offset: 3px;
-    }
-
-    .camp-inno-home .camp-inno-site-header .menu-button-5:focus-visible,
-    .camp-inno-home .camp-inno-site-header .w-nav-button:focus-visible {
-      border-radius: 1rem;
-      background: rgba(242, 107, 33, 0.14);
-    }
-
-    @media (min-width: 992px) {
-      .camp-inno-home .camp-inno-site-header .menu-button-5 {
-        display: none;
-      }
-    }
-
-    @media (max-width: 991px) {
-      .camp-inno-home {
-        --camp-header-offset: 6.5rem;
-      }
-
-      .camp-inno-home .camp-inno-site-header {
-        padding-top: 0.5rem;
-      }
-
-      .camp-inno-home .camp-inno-site-header .navbar {
-        width: calc(100% - 1rem);
-        padding: 0.9rem 1rem;
-      }
-
-      .camp-inno-home .camp-inno-site-header .container-5,
-      .camp-inno-home .camp-inno-site-header .grid-2 {
-        display: block;
-      }
-
-      .camp-inno-home .camp-inno-site-header .grid-copy {
-        display: none;
-      }
-
-      .camp-inno-home .camp-inno-site-header .nav-menu {
-        margin-top: 1rem;
-        padding: 1rem;
-        border-radius: 1rem;
-        background: rgba(8, 26, 51, 0.96);
-        flex-wrap: nowrap;
-      }
-
-      .camp-inno-hero,
-      .camp-inno-program-grid,
-      .camp-inno-team-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .camp-inno-hero {
-        width: calc(100% - 1rem);
-        min-height: auto;
-        margin-top: -3.75rem;
-        padding: 6.25rem 1rem 2.75rem;
-        border-radius: 0 0 2.25rem 2.25rem;
-      }
-
-      .camp-inno-hero-media {
-        order: 2;
-        min-height: 22rem;
-      }
-
-      .camp-inno-hero-copy {
-        max-width: none;
-        margin-left: 0;
-      }
-
-      .camp-inno-mission,
-      .camp-inno-programs,
-      .camp-inno-team,
-      .camp-inno-interest,
-      .camp-inno-motion {
-        width: calc(100% - 1rem);
-      }
-
-      .camp-inno-values-grid,
-      .camp-inno-motion {
-        grid-template-columns: 1fr;
-      }
-
-      .camp-inno-program:nth-child(2),
-      .camp-inno-program:nth-child(3),
-      .camp-inno-team-card:nth-child(2),
-      .camp-inno-team-card:nth-child(3) {
-        transform: none;
-        margin-top: 0;
-      }
-
-      .camp-inno-motion {
-        margin: 4rem auto;
-      }
-
-      .camp-inno-interest {
-        align-items: start;
-      }
-
-      .camp-inno-motion-copy,
-      .camp-inno-program {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .camp-inno-values-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .camp-inno-hero-copy h1 {
-        font-size: clamp(2.8rem, 16vw, 4rem);
-      }
-
-      .camp-inno-hero-actions {
-        flex-direction: column;
-      }
-
-      .camp-inno-button,
-      .camp-inno-button-primary,
-      .camp-inno-button-secondary {
-        width: 100%;
-      }
-
-      .camp-inno-program {
-        min-height: 18rem;
-      }
-
-      .camp-inno-motion-video {
-        min-height: 18rem;
-      }
-
-      .camp-inno-interest {
-        flex-direction: column;
-      }
-
-      .camp-inno-interest-actions {
-        width: 100%;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .camp-inno-home *,
-      .camp-inno-home *::before,
-      .camp-inno-home *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-        scroll-behavior: auto !important;
-      }
-
-      .camp-inno-home .camp-inno-motion {
-        grid-template-columns: 1fr;
-        background:
-          linear-gradient(135deg, rgba(9, 27, 53, 0.94), rgba(17, 44, 81, 0.92)),
-          url("videos/PXL_20230619_213534936TS-Apple-Devices-HD-Most-Compatible-HD-1080p-poster-00001.jpg") center / cover no-repeat;
-      }
-
-      .camp-inno-home .camp-inno-motion-video {
-        display: none;
-      }
-
-      .camp-inno-home [data-reveal],
-      .camp-inno-ready .camp-inno-home [data-reveal],
-      .camp-inno-ready .camp-inno-home [data-reveal].is-visible {
-        opacity: 1;
-        transform: none;
-      }
+    .camp-inno-home .camp-inno-eyebrow,
+    .camp-inno-home .camp-inno-marker,
+    .camp-inno-home .camp-inno-team-media::after {
+      font-family: "Fraunces", Georgia, serif;
     }
   </style>
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-  <script type="text/javascript">WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Inconsolata:400,700","Gothic A1:300,400,500,600,700","Material Icons:300,400,500,600,700"]  }});</script>
-  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
-  <link href="images/webclip.png" rel="apple-touch-icon">
-  <!--  Google tag (gtag.js)  -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7LYBBGSEM7"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7LYBBGSEM7"></script>
   <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-7LYBBGSEM7');
-</script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7LYBBGSEM7');
+  </script>
 </head>
-<body class="body camp-inno-home">
+<body class="camp-inno-home camp-inno-grain">
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header class="camp-inno-site-header">
-    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" class="navbar w-nav">
-      <div class="container-5 w-container">
-        <div class="w-layout-grid grid-2">
-          <a href="index.html" aria-current="page" class="w-inline-block w--current"><img src="images/white-Outline-Logo.svg" loading="lazy" width="95" height="95" alt="Camp Inno logo" class="image-6"></a>
-          <div class="w-layout-grid grid-copy">
-            <a id="w-node-_44bb5526-39e7-e08b-57a0-883865b2226b-1b74af2f" href="https://www.facebook.com/people/Camp-Inno/61555396717012/" class="sm-icon-link w-inline-block"><img src="images/Facebook.svg" loading="lazy" width="24" height="24" alt="" class="sm-icon">
-              <div class="sm-text sm-text-light">Facebook</div>
-            </a>
-            <a id="w-node-_44bb5526-39e7-e08b-57a0-883865b2226f-1b74af2f" href="https://www.instagram.com/campinno2024/" class="sm-icon-link w-inline-block"><img src="images/Instagram.svg" loading="lazy" width="24" height="24" alt="" class="sm-icon">
-              <div class="sm-text sm-text-light">Instagram</div>
-            </a>
-          </div>
-        </div>
-        <nav role="navigation" class="nav-menu w-nav-menu">
-          <a href="sytycc.html" class="camp-inno-nav-cta">SYTYCC</a>
-          <a href="#mission" class="nav-link-8 w-nav-link">Mission</a>
-          <a href="#programs" class="nav-link-8 w-nav-link">Programs</a>
-          <a href="team.html" class="nav-link-8 w-nav-link">About Inno</a>
-          <a href="#interest" class="nav-link-8 w-nav-link">Interest Form</a>
-          <a href="contact.html" class="nav-link-8 w-nav-link">Contact</a>
-        </nav>
-        <button type="button" aria-label="Open navigation menu" class="menu-button-5 w-nav-button">
-          <div class="icon-4 w-icon-nav-menu"></div>
-        </button>
-      </div>
+
+  <header class="camp-inno-site-header" data-nav-open="false">
+    <div class="camp-inno-nav">
+      <a href="index.html" aria-current="page" class="camp-inno-brand">
+        <img src="images/white-Outline-Logo.svg" width="44" height="44" alt="">
+        <span class="camp-inno-brand-text">
+          <strong>Camp Inno</strong>
+          <span>Est. 2024 — NJ</span>
+        </span>
+      </a>
+      <button type="button" class="camp-inno-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span aria-hidden="true"></span>
+      </button>
+      <nav aria-label="Primary">
+        <a href="#mission">Mission</a>
+        <a href="#programs">Programs</a>
+        <a href="team.html">About</a>
+        <a href="sytycc.html">SYTYCC</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://campinno.notion.site/1c34f41ed81c80c1a0c1eca550016fda?pvs=105" target="_blank" rel="noopener noreferrer" class="camp-inno-nav-cta">Interest&nbsp;→</a>
+      </nav>
     </div>
   </header>
+
   <main id="main-content" class="camp-inno-main">
+
     <section class="camp-inno-hero">
+      <div class="camp-inno-hero-meta">Issue No. 01 — Summer <span style="margin-left:.4rem">'26</span></div>
       <div class="camp-inno-hero-media">
         <img src="images/DSC02084-Edited-min.jpg" width="6000" height="3376" fetchpriority="high" alt="Campers outdoors at Camp Inno" class="camp-inno-hero-image">
       </div>
       <div class="camp-inno-hero-copy" data-reveal>
-        <div class="camp-inno-eyebrow">Camp Inno</div>
-        <h1>A new kind of camp is taking shape.</h1>
-        <p>Camp Inno is building a premium summer experience where creativity, innovation, and belonging actually live in the same place.</p>
+        <div class="camp-inno-eyebrow">A field guide</div>
+        <h1>A new <em>kind</em> of camp is taking shape.</h1>
+        <p>Camp Inno is a premium summer experience where creativity, innovation, and belonging actually live in the same place — designed on purpose, built with care.</p>
         <div class="camp-inno-hero-actions">
-          <a href="sytycc.html" class="camp-inno-button camp-inno-button-primary">So, You Think You Can Camp?</a>
-          <a href="team.html" class="camp-inno-button camp-inno-button-secondary">Meet the Team</a>
+          <a href="sytycc.html" class="camp-inno-button camp-inno-button-primary">So, You Think You Can Camp? <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="team.html" class="camp-inno-button camp-inno-button-secondary">Meet the team</a>
         </div>
       </div>
     </section>
-    <section class="camp-inno-mission" id="mission">
+
+    <section class="camp-inno-panel camp-inno-container" id="mission" aria-labelledby="mission-title">
       <div class="camp-inno-section-head">
-        <div class="camp-inno-eyebrow">Mission</div>
-        <h2>Removing barriers for the next generation of innovators.</h2>
-        <p>Camp Inno exists to make high-trust, high-creativity camp experiences feel possible, welcoming, and worth building.</p>
+        <div class="camp-inno-eyebrow">Mission — 01</div>
+        <h2 id="mission-title">Removing barriers for the next generation of innovators.</h2>
+        <p>Camp Inno exists to make high-trust, high-creativity camp experiences feel possible, welcoming, and worth building. Four values carry the work.</p>
       </div>
       <div class="camp-inno-values-grid">
         <article data-reveal>
           <h3>Radical Trust</h3>
-          <p>Build a community where candor, care, and accountability can coexist.</p>
+          <p>A community where candor, care, and accountability can coexist without trading each other off.</p>
         </article>
         <article data-reveal>
           <h3>Tailored Care</h3>
-          <p>Support people as individuals instead of forcing everyone into one camp mold.</p>
+          <p>We support people as individuals instead of forcing everyone into the same camp mold.</p>
         </article>
         <article data-reveal>
           <h3>Restorative Innovation</h3>
-          <p>Create ideas that repair, expand access, and move beyond surface novelty.</p>
+          <p>Ideas that repair, expand access, and move past surface-level novelty into real craft.</p>
         </article>
         <article data-reveal>
           <h3>Tangible Access</h3>
-          <p>Reduce the real barriers that keep people from getting to camp and belonging there.</p>
+          <p>We reduce the real barriers that keep people from getting to camp and belonging there.</p>
         </article>
       </div>
     </section>
-    <section class="camp-inno-programs" id="programs">
+
+    <section class="camp-inno-programs camp-inno-container" id="programs" aria-labelledby="programs-title">
       <div class="camp-inno-section-head">
-        <div class="camp-inno-eyebrow">Programs</div>
-        <h2>Three tracks. One ambitious camp experience.</h2>
+        <div class="camp-inno-eyebrow">Programs — 02</div>
+        <h2 id="programs-title">Three tracks. One ambitious camp experience.</h2>
+        <p>Campers choose a track and dig in. The work is real, the tools are real, and the people around them are building alongside them.</p>
       </div>
       <div class="camp-inno-program-grid">
-        <article class="camp-inno-program camp-inno-program-tech" data-reveal>
+        <article class="camp-inno-program" data-reveal>
+          <div class="camp-inno-program-tag">Build / ship / iterate</div>
           <h3>Technology</h3>
           <p>Code, robotics, and digital problem-solving for campers who want to build.</p>
         </article>
-        <article class="camp-inno-program camp-inno-program-media" data-reveal>
+        <article class="camp-inno-program" data-reveal>
+          <div class="camp-inno-program-tag">Frame / capture / edit</div>
           <h3>Multimedia</h3>
           <p>Film, photography, design, and storytelling for campers who want to create.</p>
         </article>
-        <article class="camp-inno-program camp-inno-program-innovation" data-reveal>
+        <article class="camp-inno-program" data-reveal>
+          <div class="camp-inno-program-tag">Pitch / fund / launch</div>
           <h3>Innovation &amp; Entrepreneurship</h3>
           <p>Big ideas, financial literacy, and venture thinking for campers who want to lead.</p>
         </article>
       </div>
     </section>
+
     <section class="camp-inno-motion" aria-label="Camp Inno atmosphere">
       <div class="camp-inno-motion-copy">
-        <div class="camp-inno-eyebrow">Atmosphere</div>
-        <p>Creative energy, time outdoors, and the kind of momentum that lingers after camp ends.</p>
+        <div class="camp-inno-eyebrow" style="color: rgba(255,253,248,0.72);">Atmosphere — 03</div>
+        <blockquote>“Creative energy, time outdoors, and the kind of momentum that lingers after camp ends.”</blockquote>
+        <cite>— Field notes, June</cite>
       </div>
       <video class="camp-inno-motion-video" autoplay muted loop playsinline poster="videos/PXL_20230619_213534936TS-Apple-Devices-HD-Most-Compatible-HD-1080p-poster-00001.jpg">
         <source src="videos/PXL_20230619_213534936TS-Apple-Devices-HD-Most-Compatible-HD-1080p-transcode.webm" type="video/webm">
         <source src="videos/PXL_20230619_213534936TS-Apple-Devices-HD-Most-Compatible-HD-1080p-transcode.mp4" type="video/mp4">
       </video>
     </section>
-    <section class="camp-inno-team" id="team">
+
+    <section class="camp-inno-team camp-inno-container" id="team" aria-labelledby="team-title">
       <div class="camp-inno-section-head">
-        <div class="camp-inno-eyebrow">Team</div>
-        <h2>The people behind Camp Inno are building it on purpose.</h2>
+        <div class="camp-inno-eyebrow">Team — 04</div>
+        <h2 id="team-title">The people behind Camp Inno are building it on purpose.</h2>
+        <p>Camp leadership, creative direction, and technical craft — working in the same room, not in separate lanes.</p>
       </div>
       <div class="camp-inno-team-grid">
         <article class="camp-inno-team-card" data-reveal>
-          <img src="images/Nelson.jpeg" loading="lazy" width="2313" height="3072" sizes="(max-width: 767px) 88vw, (max-width: 991px) 42vw, 280px" srcset="images/Nelson-p-500.jpeg 500w, images/Nelson-p-800.jpeg 800w, images/Nelson-p-1080.jpeg 1080w, images/Nelson-p-1600.jpeg 1600w, images/Nelson-p-2000.jpeg 2000w, images/Nelson.jpeg 2313w" alt="Portrait of Nelson Strickland" class="camp-inno-team-image">
+          <div class="camp-inno-team-media">
+            <img src="images/Nelson.jpeg" loading="lazy" width="2313" height="3072"
+                 sizes="(max-width: 767px) 88vw, (max-width: 991px) 42vw, 280px"
+                 srcset="images/Nelson-p-500.jpeg 500w, images/Nelson-p-800.jpeg 800w, images/Nelson-p-1080.jpeg 1080w, images/Nelson-p-1600.jpeg 1600w, images/Nelson-p-2000.jpeg 2000w, images/Nelson.jpeg 2313w"
+                 alt="Portrait of Nelson Strickland" class="camp-inno-team-image">
+          </div>
+          <div class="camp-inno-team-role">Co-founder · Camp leadership</div>
           <h3>Nelson Strickland</h3>
           <p>Camp leader, youth developer, and builder shaping the vision for what Camp Inno can become.</p>
         </article>
         <article class="camp-inno-team-card" data-reveal>
-          <img src="images/IMG_20231221_012657_604.webp" loading="lazy" width="1440" height="1440" sizes="(max-width: 767px) 88vw, (max-width: 991px) 42vw, 280px" srcset="images/IMG_20231221_012657_604-p-500.webp 500w, images/IMG_20231221_012657_604-p-800.webp 800w, images/IMG_20231221_012657_604-p-1080.webp 1080w, images/IMG_20231221_012657_604.webp 1440w" alt="Portrait of Chandan Brown" class="camp-inno-team-image">
+          <div class="camp-inno-team-media">
+            <img src="images/IMG_20231221_012657_604.webp" loading="lazy" width="1440" height="1440"
+                 sizes="(max-width: 767px) 88vw, (max-width: 991px) 42vw, 280px"
+                 srcset="images/IMG_20231221_012657_604-p-500.webp 500w, images/IMG_20231221_012657_604-p-800.webp 800w, images/IMG_20231221_012657_604-p-1080.webp 1080w, images/IMG_20231221_012657_604.webp 1440w"
+                 alt="Portrait of Chandan Brown" class="camp-inno-team-image">
+          </div>
+          <div class="camp-inno-team-role">Software &amp; advisory</div>
           <h3>Chandan Brown</h3>
-          <p>Creative technologist helping translate Camp Inno's ideas into systems, storytelling, and digital craft.</p>
+          <p>Creative technologist translating Camp Inno's ideas into systems, storytelling, and digital craft.</p>
         </article>
         <article class="camp-inno-team-card" data-reveal>
-          <img src="images/Q.jpg" loading="lazy" width="611" height="610" sizes="(max-width: 767px) 88vw, (max-width: 991px) 42vw, 280px" srcset="images/Q-p-500.jpg 500w, images/Q.jpg 611w" alt="Portrait of Quarius Lucas" class="camp-inno-team-image">
+          <div class="camp-inno-team-media">
+            <img src="images/Q.jpg" loading="lazy" width="611" height="610"
+                 sizes="(max-width: 767px) 88vw, (max-width: 991px) 42vw, 280px"
+                 srcset="images/Q-p-500.jpg 500w, images/Q.jpg 611w"
+                 alt="Portrait of Quarius Lucas" class="camp-inno-team-image">
+          </div>
+          <div class="camp-inno-team-role">Multi-media specialist</div>
           <h3>Quarius Lucas</h3>
           <p>Creative director bringing media instincts, atmosphere, and visual identity into the camp's future shape.</p>
         </article>
       </div>
-      <a href="team.html" class="camp-inno-text-link">See the full team</a>
+      <a href="team.html" class="camp-inno-text-link">See the full team <span aria-hidden="true">→</span></a>
     </section>
+
+    <section class="camp-inno-interest camp-inno-container" id="interest" aria-labelledby="interest-title">
+      <div>
+        <div class="camp-inno-eyebrow" style="color: var(--camp-orange);">Stay close</div>
+        <h2 id="interest-title">Follow what Camp Inno is building.</h2>
+        <p>If you want updates as the camp takes shape — session news, early enrollment, field dispatches — sign up with the interest form.</p>
+      </div>
+      <div>
+        <a href="https://campinno.notion.site/1c34f41ed81c80c1a0c1eca550016fda?pvs=105" target="_blank" rel="noopener noreferrer" class="camp-inno-button camp-inno-button-primary">Interest form <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
   </main>
-  <footer class="camp-inno-interest" id="interest">
-    <div class="camp-inno-interest-copy">
-      <div class="camp-inno-eyebrow">Stay close</div>
-      <h2>Follow what Camp Inno is building.</h2>
-      <p>If you want updates as the camp takes shape, use the interest button below.</p>
+
+  <footer class="camp-inno-footer camp-inno-container">
+    <div class="camp-inno-footer-grid">
+      <div class="camp-inno-footer-brand">
+        <strong>Camp Inno</strong>
+        <p>A premium summer experience where creativity, innovation, and belonging live in the same place. Building on purpose, in public.</p>
+        <p style="font-style:italic;opacity:.7">— Woodbury, NJ</p>
+      </div>
+      <div class="camp-inno-footer-links">
+        <strong style="color:var(--camp-ink);font-family:Georgia,serif;margin-bottom:.35rem">Explore</strong>
+        <a href="#mission">Mission</a>
+        <a href="#programs">Programs</a>
+        <a href="team.html">About the team</a>
+        <a href="sytycc.html">SYTYCC</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="camp-inno-footer-links">
+        <strong style="color:var(--camp-ink);font-family:Georgia,serif;margin-bottom:.35rem">Stay close</strong>
+        <a href="https://www.instagram.com/campinno2024/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/people/Camp-Inno/61555396717012/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.youtube.com/@CampInno2024" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="mailto:info@campinno.com">info@campinno.com</a>
+      </div>
     </div>
-    <div class="camp-inno-interest-actions">
-      <a href="https://campinno.notion.site/1c34f41ed81c80c1a0c1eca550016fda?pvs=105" target="_blank" rel="noopener noreferrer" class="camp-inno-button camp-inno-button-primary">Interest Form</a>
+    <div class="camp-inno-footer-bottom">
+      <span>© <span id="camp-year">2026</span> Camp Inno</span>
+      <span>Field guide, Issue No. 01</span>
     </div>
   </footer>
-  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65dfe94f6194922108671f44" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  <script src="js/webflow.js" type="text/javascript"></script>
+
   <script>
-    const revealItems = document.querySelectorAll('[data-reveal]');
-    if ('IntersectionObserver' in window && revealItems.length) {
-      const observer = new IntersectionObserver((entries, currentObserver) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-
-          entry.target.classList.add('is-visible');
-          currentObserver.unobserve(entry.target);
+    // Nav toggle
+    (function() {
+      const header = document.querySelector('.camp-inno-site-header');
+      const btn = header && header.querySelector('.camp-inno-nav-toggle');
+      if (!header || !btn) return;
+      btn.addEventListener('click', () => {
+        const open = header.getAttribute('data-nav-open') === 'true';
+        header.setAttribute('data-nav-open', String(!open));
+        btn.setAttribute('aria-expanded', String(!open));
+      });
+      header.querySelectorAll('nav a').forEach((a) => {
+        a.addEventListener('click', () => {
+          header.setAttribute('data-nav-open', 'false');
+          btn.setAttribute('aria-expanded', 'false');
         });
-      }, { threshold: 0.2 });
+      });
+    })();
 
-      revealItems.forEach((item) => observer.observe(item));
-    } else {
-      revealItems.forEach((item) => item.classList.add('is-visible'));
-    }
+    // Reveal on scroll
+    (function() {
+      const items = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window && items.length) {
+        const io = new IntersectionObserver((entries, o) => {
+          entries.forEach((e) => {
+            if (!e.isIntersecting) return;
+            e.target.classList.add('is-visible');
+            o.unobserve(e.target);
+          });
+        }, { threshold: 0.18 });
+        items.forEach((el) => io.observe(el));
+      } else {
+        items.forEach((el) => el.classList.add('is-visible'));
+      }
+    })();
+
+    // Footer year
+    document.getElementById('camp-year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
