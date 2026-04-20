@@ -406,8 +406,8 @@ body.camp-inno-page {
 .camp-inno-hero-media {
   position: relative;
   width: calc(100% + clamp(3rem, 9vw, 10rem));
-  height: clamp(32rem, 46vw, 42rem);
-  max-height: 60vh;
+  height: clamp(27rem, 39vw, 35.5rem);
+  max-height: 51vh;
   border-radius: 2rem;
   overflow: hidden;
   box-shadow: var(--camp-shadow);
