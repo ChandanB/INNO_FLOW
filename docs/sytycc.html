@@ -184,7 +184,7 @@
       height: clamp(19rem, 32vw, 27rem);
       max-height: none;
       object-fit: cover;
-      object-position: center;
+      object-position: center 22%;
       padding-right: 0;
       border-radius: 1.25rem;
       filter: saturate(0.92) contrast(1.02);
@@ -747,10 +747,22 @@
         width: min(100%, 24rem);
         max-height: 24rem;
       }
+      .sytycc-page .feature-wrap.personal-details.sytycc-crew-row,
+      .sytycc-page .feature-wrap.reverse.personal-details.sytycc-crew-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
       .sytycc-page .feature-image-2.sytycc-crew-visual {
-        width: min(100%, 420px);
-        max-width: none;
+        width: 100%;
+        max-width: 480px;
         min-width: 0;
+        margin: 0 auto;
+      }
+      .sytycc-page .image-2.sytycc-crew-portrait {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        object-position: center 18%;
       }
     }
   </style>
